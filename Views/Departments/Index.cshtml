@@ -1,0 +1,45 @@
+﻿@model IEnumerable<StudentService.Models.Department>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <h4 class="card-title ">Department</h4>
+            <p class="card-category"> Mange Department </p>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class=" text-primary">
+                    <th>
+                        @Html.DisplayNameFor(model => model.DepartmentName)
+                    </th>
+
+                    </thead>
+
+                    @foreach (var item in Model)
+                    {
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DepartmentName)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.DepartmentCode }, new { @class = "btn btn-primary btn-round" }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.DepartmentCode }, new { @class = "btn btn-primary btn-round" }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.DepartmentCode }, new { @class = "btn btn-primary btn-round" })
+                                </td>
+
+                        </tbody>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
