@@ -1,0 +1,65 @@
+﻿@model IEnumerable<StudentService.Models.Project>
+
+@{
+    ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<h2>Index</h2>
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <h4 class="card-title ">Project</h4>
+            <p class="card-category"> Mange Project </p>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class=" text-primary">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ProjectName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Abstract)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Professor)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    @foreach (var item in Model)
+                    {
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProjectName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Abstract)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Professor)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.ProjectID }, new { @class = "btn btn-primary btn-round" }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.ProjectID }, new { @class = "btn btn-primary btn-round" }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ProjectID }, new { @class = "btn btn-primary btn-round" })
+                                </td>
+
+</tbody>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

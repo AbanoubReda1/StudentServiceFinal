@@ -1,0 +1,75 @@
+﻿@model IEnumerable<StudentService.Models.Task>
+
+@{
+    ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<h2>Index</h2>
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <h4 class="card-title ">Task</h4>
+            <p class="card-category"> Mange Task </p>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class=" text-primary">
+                    <th>
+                        @Html.DisplayNameFor(model => model.TaskHeader)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TaskDetails)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Section.DepartmentCode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Type1.TypeName)
+                    </th>
+                    <th></th>
+
+                    </thead>
+
+                    @foreach (var item in Model)
+                    {
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TaskHeader)
+                                </td>
+                                <td>
+                                    @Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => item.TaskDetails).ToString()))
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Section.DepartmentCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Type1.TypeName)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.TaskNumber }, new { @class = "btn btn-primary btn-round" }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.TaskNumber }, new { @class = "btn btn-primary btn-round" }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.TaskNumber }, new { @class = "btn btn-primary btn-round" })
+                                </td>
+
+</tbody>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

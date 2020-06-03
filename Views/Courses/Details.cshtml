@@ -1,0 +1,51 @@
+﻿@model StudentService.Models.Course
+
+@{
+    ViewBag.Title = "Details";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CrediteHour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CrediteHour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Syllabus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Syllabus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.DepartmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.DepartmentName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

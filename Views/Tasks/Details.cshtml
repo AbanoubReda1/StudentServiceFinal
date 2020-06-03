@@ -1,0 +1,52 @@
+﻿@model StudentService.Models.Task
+
+@{
+    ViewBag.Title = "Details";
+     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Task</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TaskHeader)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaskHeader)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaskDetails)
+        </dt>
+
+        <dd>
+            @Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(model => model.TaskDetails).ToString()))
+        
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Section.DepartmentCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Section.DepartmentCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type1.TypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type1.TypeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TaskNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,51 @@
+﻿@model StudentService.Models.Material
+
+@{
+    ViewBag.Title = "Details";
+      Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Material</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LectureNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LectureNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LectureName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LectureName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PDF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PDF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Section.DepartmentCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Section.DepartmentCode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaterialNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

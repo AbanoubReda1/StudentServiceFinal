@@ -11,7 +11,8 @@ namespace StudentService.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web.Mvc;
+
     public partial class Task
     {
         public int TaskNumber { get; set; }
@@ -21,6 +22,7 @@ namespace StudentService.Models
         public string Semester { get; set; }
         public string Year { get; set; }
         public string TaskHeader { get; set; }
+        [AllowHtml]
         public string TaskDetails { get; set; }
         public string Type { get; set; }
     

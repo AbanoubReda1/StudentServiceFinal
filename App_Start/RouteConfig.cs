@@ -18,6 +18,11 @@ namespace StudentService
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                   name: "pop",
+                   url: "{Filter}/{pol}/{id}/{id2}",
+                   defaults: new { controller = "Filter", action = "pol", id = UrlParameter.Optional, id2 = UrlParameter.Optional }
+               );
         }
     }
 }

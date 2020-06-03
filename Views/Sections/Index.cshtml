@@ -1,0 +1,91 @@
+﻿@model IEnumerable<StudentService.Models.Section>
+
+@{
+    ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Section</h4>
+                <p class="card-category"> Mange Section </p>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Course.CourseTitle)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instructor.InstructorName)
+                                </th>
+                                <th></th>
+                            </tr>
+
+                        </thead>
+
+                        @foreach (var item in Model)
+                        {
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Course.CourseTitle)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Instructor.InstructorName)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.SectionNumber }, new { @class = "btn btn-primary btn-round" }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.SectionNumber }, new { @class = "btn btn-primary btn-round" }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.SectionNumber }, new { @class = "btn btn-primary btn-round" })
+                                    </td>
+
+</tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.CourseTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Instructor.InstructorName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.CourseTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Instructor.InstructorName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.SectionNumber }) |
+            @Html.ActionLink("Details", "Details", new {id=item.SectionNumber}) |
+            @Html.ActionLink("Delete", "Delete", new {id=item.SectionNumber })
+        </td>
+    </tr>
+}
+
+</table>*@

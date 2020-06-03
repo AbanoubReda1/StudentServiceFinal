@@ -1,0 +1,67 @@
+﻿@model IEnumerable<StudentService.Models.Material>
+
+@{
+    ViewBag.Title = "Index";
+     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Material</h4>
+                <p class="card-category"> Mange Material </p>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LectureNumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LectureName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PDF)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Section.DepartmentCode)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        @foreach (var item in Model)
+                        {
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LectureNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LectureName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PDF)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Section.DepartmentCode)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.MaterialNumber }, new { @class = "btn btn-primary btn-round" }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.MaterialNumber }, new { @class = "btn btn-primary btn-round" }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.MaterialNumber }, new { @class = "btn btn-primary btn-round" })
+                                    </td>
+
+</tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

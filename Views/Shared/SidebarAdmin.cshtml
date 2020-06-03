@@ -60,25 +60,26 @@
                     <p> Dashboard </p>
                 </a>
             </li>
+            @* Department *@
             <li class="nav-item ">
-                <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
-                    <i class="material-icons">image</i>
+                <a class="nav-link" data-toggle="collapse" href="#department">
+                    <i class="material-icons">class</i>
                     <p>
                         Departments
                         <b class="caret"></b>
                     </p>
                 </a>
-                <div class="collapse" id="pagesExamples">
+                <div class="collapse" id="department">
                     <ul class="nav">
                         <li class="nav-item ">
                             <a class="nav-link" href="@Url.Action("Index","Departments")">
-                                <span class="sidebar-mini"> M </span>
+                                <span class="sidebar-mini"> <i class="material-icons">explore</i> </span>
                                 <span class="sidebar-normal"> Mange Department </span>
                             </a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="@Url.Action("Create","Departments")">
-                                <span class="sidebar-mini"> A </span>
+                                <span class="sidebar-mini"> <i class="material-icons">note_add</i> </span>
                                 <span class="sidebar-normal"> Add Department </span>
                             </a>
                         </li>
@@ -86,19 +87,222 @@
                     </ul>
                 </div>
             </li>
+            @* Course *@
             <li class="nav-item ">
-                <a class="nav-link" data-toggle="collapse" href="#componentsExamples">
-                    <i class="material-icons">apps</i>
+                <a class="nav-link" data-toggle="collapse" href="#course">
+                    <i class="material-icons">
+                        picture_as_pdf
+                    </i>
                     <p>
-                        Components
+                        Courses
                         <b class="caret"></b>
                     </p>
                 </a>
+                <div class="collapse" id="course">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Index","Courses")">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">explore</i>
+                                </span>
+                                <span class="sidebar-normal"> Mange Courses </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Create","Courses")">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">note_add</i>
+                                </span>
+                                <span class="sidebar-normal"> Add Courses </span>
+                            </a>
+                        </li>
 
+                    </ul>
+                </div>
             </li>
+            @* Instructor  *@
+            <li class="nav-item ">
+                <a class="nav-link" data-toggle="collapse" href="#instructor">
+                    <i class="material-icons">
+                        supervisor_account
+                    </i>
+                    <p>
+                        Instructor
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="instructor">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Index","Instructors")">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">explore</i>
+                                </span>
+                                <span class="sidebar-normal"> Mange Instructor</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Create","Instructors")">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">note_add</i>
+                                </span>
+                                <span class="sidebar-normal"> Add Instructors </span>
+                            </a>
+                        </li>
 
+                    </ul>
+                </div>
+            </li>
+            @* Section *@
+            <li class="nav-item ">
+                <a class="nav-link" data-toggle="collapse" href="#section">
+                    <i class="material-icons">event</i>
+                    <p>
+                        Section
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="section">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Index","Sections")">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">explore</i>
+                                </span>
+                                <span class="sidebar-normal"> Mange Section </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Create","Sections")">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">note_add</i>
+                                </span>
+                                <span class="sidebar-normal"> Add Section </span>
+                            </a>
+                        </li>
 
+                    </ul>
+                </div>
+            </li>
+            @* Material *@
+            <li class="nav-item ">
+                <a class="nav-link" data-toggle="collapse" href="#material">
+                    <i class="material-icons">folder</i>
+                    <p>
+                        Material
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="material">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Index","Materials")">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">explore</i>
+                                </span>
+                                <span class="sidebar-normal"> Mange Material </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Create","Materials")">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">note_add</i>
+                                </span>
+                                <span class="sidebar-normal"> Add Material </span>
+                            </a>
+                        </li>
 
+                    </ul>
+                </div>
+            </li>
+            @* Task *@
+            <li class="nav-item ">
+                <a class="nav-link" data-toggle="collapse" href="#task">
+                    <i class="material-icons">help</i>
+                    <p>
+                        Task
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="task">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Index","Tasks")">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">explore</i>
+                                </span>
+                                <span class="sidebar-normal"> Mange Task </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Create","Tasks")">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">note_add</i>
+                                </span>
+                                <span class="sidebar-normal"> Add Task </span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            @* Type *@
+            <li class="nav-item ">
+                <a class="nav-link" data-toggle="collapse" href="#type">
+                    <i class="material-icons">title</i>
+                    <p>
+                        Type
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="type">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Index","Types")">
+                                <span class="sidebar-mini"><i class="material-icons">explore</i> </span>
+                                <span class="sidebar-normal"> Mange Type </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Create","Types")">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">note_add</i>
+                                </span>
+                                <span class="sidebar-normal"> Add Type </span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" data-toggle="collapse" href="#project">
+                    <i class="material-icons">engineering</i>
+                    <p>
+                        Project
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="project">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Index","Projects")">
+                                <span class="sidebar-mini"><i class="material-icons">explore</i> </span>
+                                <span class="sidebar-normal"> Mange Projects </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="@Url.Action("Create","Projects")">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">note_add</i>
+                                </span>
+                                <span class="sidebar-normal"> Add Project </span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
 
         </ul>
     </div>

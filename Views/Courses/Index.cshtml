@@ -1,0 +1,63 @@
+﻿@model IEnumerable<StudentService.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <h4 class="card-title ">Course</h4>
+            <p class="card-category"> Mange Course </p>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class=" text-primary">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CourseTitle)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CrediteHour)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Syllabus)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Department.DepartmentName)
+                            </th>
+                        </tr>
+                    </thead>
+
+                    @foreach (var item in Model)
+                    {
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CourseTitle)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CrediteHour)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Syllabus)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.CourseCode }, new { @class = "btn btn-primary btn-round" }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.CourseCode }, new { @class = "btn btn-primary btn-round" }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseCode }, new { @class = "btn btn-primary btn-round" })
+                                </td>
+
+</tbody>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

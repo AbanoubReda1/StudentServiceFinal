@@ -1,0 +1,79 @@
+﻿@model IEnumerable<StudentService.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="~/Content/StyleSheetfinal.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<!-- Default dropright button -->
+<div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown link
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+
+        @foreach (var emp in (ViewBag.DepartmentCode as List<StudentService.Models.Department>))
+        {
+            <li class="dropdown-submenu">
+
+
+                <a class="dropdown-item" tabindex="-1" href="#" id="DepartmentCode" name="DepartmentCode">
+
+                    @emp.DepartmentName
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                        @foreach (var pop in (ViewBag.course as List<StudentService.Models.Course>).Where(a => a.DepartmentCode == emp.DepartmentCode))
+                        {
+                            <a class="dropdown-item" href="#">
+                                @pop.CourseTitle
+                            </a>
+
+
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item" href="#">Materials</a>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item" href="@Url.Action("Task", "Filtr", new { id = pop.CourseCode.Trim() })">Questiion </a>
+
+                                    <ul class="dropdown-menu">
+
+
+
+                                        @foreach (var ty in (ViewBag.Types as List<StudentService.Models.Type>))
+                                        {
+                                            
+
+                                                <li class="dropdown-submenu">
+                                                    <a class="dropdown-item" href="@Url.Action("pol", "Filtr", new { id =pop.CourseCode,id2=ty.TypeID })">
+                                                        @ty.TypeName
+                                                        
+                                                    </a>
+
+
+
+                                                </li>
+                                         }
+
+                                    
+
+
+                                    </ul>
+
+
+                                </li>
+                            </ul>
+                        }
+                    </li>
+                </ul>
+            </li>
+        }
+    </div>
+</div>
+
