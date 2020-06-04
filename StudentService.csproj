@@ -653,6 +653,8 @@
     <Content Include="assets\img\city-profile.jpg" />
     <Content Include="assets\img\city.jpg" />
     <Content Include="assets\img\cover.jpg" />
+    <Content Include="assets\img\CS.jpg" />
+    <Content Include="assets\img\dm.jpg" />
     <Content Include="assets\img\examples\clem-onojegaw.jpg" />
     <Content Include="assets\img\examples\clem-onojeghuo.jpg" />
     <Content Include="assets\img\examples\cynthia-del-rio.jpg" />
@@ -668,6 +670,8 @@
     <Content Include="assets\img\faces\card-profile2-square.jpg" />
     <Content Include="assets\img\faces\marc.jpg" />
     <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\g.png" />
+    <Content Include="assets\img\Is.jpg" />
     <Content Include="assets\img\landing.jpg" />
     <Content Include="assets\img\mask.png" />
     <Content Include="assets\img\new_logo.png" />
@@ -996,6 +1000,10 @@
     <Content Include="Views\Types\Details.cshtml" />
     <Content Include="Views\Types\Edit.cshtml" />
     <Content Include="Views\Types\Index.cshtml" />
+    <Content Include="Views\Shared\_StudentLayout.cshtml" />
+    <Content Include="Views\Filtr\Courses.cshtml" />
+    <Content Include="Views\Filtr\Filter.cshtml" />
+    <Content Include="Views\Shared\test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

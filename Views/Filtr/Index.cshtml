@@ -2,14 +2,30 @@
 
 @{
     ViewBag.Title = "Index";
-
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+
 <link href="~/Content/StyleSheetfinal.css" rel="stylesheet" />
-<script src="~/Scripts/bootstrap.min.js"></script>
+<style>
+    .card .card-body {
+        padding: 90px;
+        content: "";
+        background-color: rgba(0,0,0,.56);
+        border-radius: 6px;
+    }
+    .card-background {
+        background-position: 50%;
+        background-size: cover;
+        
+    }
+    .card-title {
+        color: #eee;
+        font-size: x-large;
+    }
+</style>
 <!-- Default dropright button -->
-<div class="dropdown show">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+@*<div class="dropdown ">
+    <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Dropdown link
     </a>
 
@@ -21,7 +37,7 @@
             <li class="dropdown-submenu">
 
 
-                <a class="dropdown-item" tabindex="-1" href="#" id="DepartmentCode" name="DepartmentCode">
+                <a class="dropdown-item" tabindex="-1" href="#1" id="DepartmentCode" name="DepartmentCode">
 
                     @emp.DepartmentName
                 </a>
@@ -30,7 +46,7 @@
                     <li class="dropdown-submenu">
                         @foreach (var pop in (ViewBag.course as List<StudentService.Models.Course>).Where(a => a.DepartmentCode == emp.DepartmentCode))
                         {
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item dropdown-toggle" href="#" id="1">
                                 @pop.CourseTitle
                             </a>
 
@@ -48,20 +64,20 @@
 
                                         @foreach (var ty in (ViewBag.Types as List<StudentService.Models.Type>))
                                         {
-                                            
-
-                                                <li class="dropdown-submenu">
-                                                    <a class="dropdown-item" href="@Url.Action("pol", "Filtr", new { id =pop.CourseCode,id2=ty.TypeID })">
-                                                        @ty.TypeName
-                                                        
-                                                    </a>
 
 
+                                            <li class="dropdown-submenu">
+                                                <a class="dropdown-item" href="@Url.Action("pol", "Filtr", new { id =pop.CourseCode,id2=ty.TypeID })">
+                                                    @ty.TypeName
 
-                                                </li>
-                                         }
+                                                </a>
 
-                                    
+
+
+                                            </li>
+                                        }
+
+
 
 
                                     </ul>
@@ -75,5 +91,303 @@
             </li>
         }
     </div>
+</div>*@
+<div class="tab-content tab-space">
+    <div class="tab-pane work active show" id="work">
+        <div class="row">
+            <div class="col-md-9 ml-auto mr-auto ">
+                <h4 class="title">Select Department</h4>
+                <div class="row collections">
+                    <div class="col-md-6 flex-xl-row">
+                        <div class="card card-background" style=" background-image: url('/assets/img/CS.jpg')">
+                            <a href="@Url.Action("Courses", "Filtr", new { id ="CS" })"></a>
+                            <div class="card-body">
+                                <label class="badge badge-warning">CS</label>
+                                <a href="@Url.Action("Courses", "Filtr", new { id ="CS" })">
+                                    <h2 class="card-title">Computer Science</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-background" style="background-image: url('/assets/img/dm.jpg')">
+                            <a href="@Url.Action("Courses", "Filtr", new { id ="DM" })"></a>
+                            <div class="card-body">
+                                <label class="badge badge-info">DM</label>
+                                <a href="@Url.Action("Courses", "Filtr", new { id ="DM" })">
+                                    <h2 class="card-title">Digital Media</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-background" style="background-image: url('/assets/img/Is.jpg')">
+                            <a href="@Url.Action("Courses", "Filtr", new { id ="IS" })"></a>
+                            <div class="card-body">
+                                <label class="badge badge-danger">IS</label>
+                                <a href="@Url.Action("Courses", "Filtr", new { id ="IS" })">
+                                    <h2 class="card-title">Information System</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-background" style="background-image: url('/assets/img/g.png')">
+                            <a href="@Url.Action("Courses", "Filtr", new { id ="GE" })"></a>
+                            <div class="card-body">
+                                <label class="badge badge-success">G</label>
+                                <a href="@Url.Action("Courses", "Filtr", new { id ="GE" })">
+                                    <h2 class="card-title">Genral</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 mr-auto ml-auto stats">
+                <h4 class="title">Stats</h4>
+                <ul class="list-unstyled">
+                    <li><b>5</b> Courses</li>
+                    <li><b>10</b>Quizess </li>
+                    <li><b>20</b> Assingment</li>
+                    <li><b>3</b> Project</li>
+                </ul>
+                <hr>
+                <h4 class="title">About his Work</h4>
+                <p class="description">This website help Student to give him sample of quiz or material that he need to practice before exam</p>
+                <hr>
+               
+            </div>
+        </div>
+    </div>
+    
+    
 </div>
-
+@*<div class="projects-3 section-dark" id="projects-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto text-center">
+                <h6 class="category text-muted">Our work</h6>
+                <h2 class="title">Some of Our Awesome Projects - 3</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 ml-auto">
+                <div class="card card-plain">
+                    <a href="@Url.Action("Courses", "Filtr", new { id ="CS" })">
+                        <div class="card-header card-header-image">
+                            <img src="./assets/img/examples/card-project1.jpg">
+                        </div>
+                    </a>
+                    <div class="card-body ">
+                        <h6 class="card-category">Web Design</h6>
+                        <a href="@Url.Action("Courses", "Filtr", new { id ="CS" })">
+                            <h4 class="card-title">Famous Website Redesign</h4>
+                        </a>
+                        <p class="card-description">
+                            Don't be scared of the truth because we need to restart the human foundation in truth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 mr-auto">
+                <div class="card card-plain">
+                    <a href="@Url.Action("Courses", "Filtr", new { id ="CS" })">
+                        <div class="card-header card-header-image">
+                            <img src="./assets/img/examples/card-project2.jpg">
+                        </div>
+                    </a>
+                    <div class="card-body ">
+                        <h6 class="card-category">Productivity Tools</h6>
+                        <a href="@Url.Action("Courses", "Filtr", new { id ="CS" })">
+                            <h4 class="card-title">Beautiful Desktop for Designers</h4>
+                        </a>
+                        <p class="card-description">
+                            Don't be scared of the truth because we need to restart the human foundation in truth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 ml-auto">
+                <div class="card card-plain">
+                    <a href="@Url.Action("Courses", "Filtr", new { id ="CS" })">
+                        <div class="card-header card-header-image">
+                            <img src="./assets/img/examples/card-project3.jpg">
+                        </div>
+                    </a>
+                    <div class="card-body ">
+                        <h6 class="card-category">Android App</h6>
+                        <a href="@Url.Action("Courses", "Filtr", new { id ="CS" })">
+                            <h4 class="card-title">Analytics for Android</h4>
+                        </a>
+                        <p class="card-description">
+                            Don't be scared of the truth because we need to restart the human foundation in truth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 mr-auto">
+                <div class="card card-plain">
+                    <a href="@Url.Action("Courses", "Filtr", new { id ="CS" })">
+                        <div class="card-header card-header-image">
+                            <img src="./assets/img/examples/card-project4.jpg">
+                        </div>
+                    </a>
+                    <div class="card-body ">
+                        <h6 class="card-category">Website</h6>
+                        <a href="@Url.Action("Courses", "Filtr", new { id ="CS" })">
+                            <h4 class="card-title">Behance Redesign</h4>
+                        </a>
+                        <p class="card-description">
+                            Don't be scared of the truth because we need to restart the human foundation in truth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+@*<div class="section section-overview">
+    <div class="features-5" style="background-image: url('./assets/img/features-5.jpg')">
+        <div class="col-md-8 ml-auto mr-auto text-center">
+            <h2 class="title">Your work will get much easier</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="info">
+                        <div class="icon">
+                            <i class="material-icons">format_bold</i>
+                        </div>
+                        <h4 class="info-title">Bootstrap Grid</h4>
+                        <p>Enjoy the fluid grid system based on 12 columns. Material Kit PRO is built over Bootstrap and has all the benefits that the framework comes with.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="info">
+                        <div class="icon">
+                            <i class="material-icons">phonelink</i>
+                        </div>
+                        <h4 class="info-title">Fully Responsive</h4>
+                        <p>This Bootstrap kit is built mobile-first and looks amazing on any device. Regardless of the screen size, the website content will naturally fit the given resolution. </p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="info">
+                        <div class="icon">
+                            <i class="material-icons">access_time</i>
+                        </div>
+                        <h4 class="info-title">Save Time</h4>
+                        <p>Using the Material Kit PRO will save you large amount of time. You don't have to worry about customising the basic Bootstrap design or generating new components.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="info">
+                        <div class="icon">
+                            <i class="material-icons">attach_money</i>
+                        </div>
+                        <h4 class="info-title">Save Money</h4>
+                        <p>Creating your design from scratch with dedicated designers can be very expensive. Using a kit is the best option to start your development while bootstrapping your budget. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-testimonials team-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto text-center">
+                    <h2 class="title">Trusted by 330.000+ People</h2>
+                    <h5 class="description">The UI Kits, Templates and Dashboards that we've created are used by <b>330,000+ web developers</b> in over <b>576.000 Web Projects</b>. This is what some of them think:</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card-header card-header-image">
+                                    <a href="@Url.Action("Courses", "Filtr", new { id ="CS" })">
+                                        <img class="img" src="./assets/img/test1.jpg">
+                                    </a>
+                                    <div class="colored-shadow" style="background-image: url(&quot;./assets/img/test1.jpg&quot;); opacity: 1;"></div>
+                                    <div class="colored-shadow" style="background-image: url(&quot;./assets/img/test1.jpg&quot;); opacity: 1;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h4 class="card-title">Khaldi Yass</h4>
+                                    <p class="card-description">
+                                        "As soon as I saw this kit, everything else isn't the same anymore, I just can't describe it guys! Thank you for this work!"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card-header card-header-image">
+                                    <a href="@Url.Action("Courses", "Filtr", new { id ="CS" })">
+                                        <img class="img" src="./assets/img/test2.jpg">
+                                    </a>
+                                    <div class="colored-shadow" style="background-image: url(&quot;./assets/img/test2.jpg&quot;); opacity: 1;"></div>
+                                    <div class="colored-shadow" style="background-image: url(&quot;./assets/img/test2.jpg&quot;); opacity: 1;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h4 class="card-title">Josh Murray</h4>
+                                    <p class="card-description">
+                                        "Great kit! Used this for a client already and he is over the moon. Keep up the good work Creative Tim! 10/10 for design, colours, and the feel of the kit."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card-header card-header-image">
+                                    <a href="@Url.Action("Courses", "Filtr", new { id ="CS" })">
+                                        <img class="img" src="./assets/img/test3.jpg">
+                                    </a>
+                                    <div class="colored-shadow" style="background-image: url(&quot;./assets/img/test3.jpg&quot;); opacity: 1;"></div>
+                                    <div class="colored-shadow" style="background-image: url(&quot;./assets/img/test3.jpg&quot;); opacity: 1;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h4 class="card-title">Michael Onubogu</h4>
+                                    <p class="card-description">
+                                        "Damn Daniel!!! This Material UI Kit is fresh AF! Amazing work!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="our-clients">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="./assets/img/example-pages/vodafone.jpg" alt="">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="./assets/img/example-pages/microsoft.jpg" alt="">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="./assets/img/example-pages/harvard.jpg" alt="">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="./assets/img/example-pages/stanford.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@

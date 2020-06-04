@@ -31,6 +31,27 @@ namespace StudentService.Views
         }
 
 
+        public ActionResult Courses(string id)
+        {
+
+            var course = db.Courses.Where(a=>a.DepartmentCode == id);
+            return View(course.ToList());
+            
+
+
+
+        }
+        public ActionResult Filter(string id)
+        {
+            
+            return View();
+
+          
+
+
+
+
+        }
 
         public ActionResult Task(string id)
         {
@@ -38,7 +59,7 @@ namespace StudentService.Views
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Task course = db.Tasks.FirstOrDefault(a => a.CourseCode == id);
+            var course = db.Tasks.Where(a => a.CourseCode == id);
 
             var task = db.Tasks.Where(a => a.CourseCode == id).ToList();
             if (task == null)
@@ -55,7 +76,7 @@ namespace StudentService.Views
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Task course = db.Tasks.FirstOrDefault(a => a.CourseCode == id);
+           
 
             var task = db.Tasks.Where(a => a.CourseCode == id).Where(a=>a.Type==id2).ToList();
             if (task == null)
