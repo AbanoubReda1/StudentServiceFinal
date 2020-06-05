@@ -7,7 +7,6 @@
 
 <h2>Courses</h2>
 <style>
-  
 </style>
 <div class="row">
 
@@ -31,15 +30,13 @@
                             <i class="material-icons">Course</i> @Html.DisplayFor(modelItem => item.CourseCode)
                         </h6>
                         <h4 class="card-title">
+                         
+
+                            <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode})">
+
+                                @Html.DisplayFor(modelItem => item.CourseTitle)
+                            </a>
                         </h4>
-                     
-                        <div class="col-lg-4 col-md-6">
-                            <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#noticeModal">
-                                <i class="material-icons">info_outline</i>
-                                @Html.DisplayFor(modelItem => item.Department.DepartmentName)
-                                <div class="ripple-container"></div>
-                            </button>
-                        </div>
                     </div>
                     <div class="card-footer ">
                         <div class="author">
@@ -55,7 +52,7 @@
                 </div>
             </div>
 
-           
+
 
         }
         else if (item.DepartmentCode == "DM")
@@ -163,53 +160,9 @@
             </div>
 
         }
-<div class="modal fade" id="noticeModal" tabindex="-1" role="dialog">
-    <div class="modal-backdrop">
-        <p>The first step is to create an account at <a href="@Url.Action("pol","Filtr",new { })">Creative Tim</a>. You can choose a social network or go for the classic version, whatever works best for you.</p>
+        
 
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">How Do You Become an Affiliate?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="material-icons">clear</i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="instruction">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <strong>1. Register</strong>
-
-                        </div>
-                        <div class="col-md-4">
-                            <div class="picture">
-                                <img src="./assets/img/dg1.jpg" alt="Thumbnail Image" class="rounded img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="instruction">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <strong>2. Apply</strong>
-                            <p>The first step is to create an account at <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode,id2="F"})">Creative Tim</a>. You can choose a social network or go for the classic version, whatever works best for you.</p>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="picture">
-                                <img src="./assets/img/dg2.jpg" alt="Thumbnail Image" class="rounded img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p>If you have more questions, don&apos;!</p>
-            </div>
-            <div class="modal-footer text-center">
-                <button type="button" class="btn btn-info btn-round" data-dismiss="modal">Sounds good!</button>
-            </div>
-        </div>
-    </div>
-</div>
-      
     }
 </div>
+
 

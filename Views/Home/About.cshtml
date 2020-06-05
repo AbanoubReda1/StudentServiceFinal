@@ -1,7 +1,24 @@
 ﻿@{
     ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<script src="~/Scripts/fullcalendar/fullcalendar.min.js"></script>
+<script src="~/assets/js/plugins/fullcalendar.min.js"></script>
+<div class="header text-center">
+    <h3 class="title">FullCalendar.io</h3>
+    <p class="category">
+        Handcrafted by our friends from
+        <a target="_blank" href="https://fullcalendar.io/" rel="nofollow">FullCalendar.io</a>. Please checkout their
+        <a href="https://fullcalendar.io/docs/" target="_blank" rel="nofollow">full documentation.</a>
+    </p>
+</div>
+<div class="row">
+    <div class="col-md-10 ml-auto mr-auto">
+        <div class="card card-calendar">
+            <div class="card-body ">
+                <div id="fullCalendar"></div>
+            </div>
+        </div>
+    </div>
+</div>

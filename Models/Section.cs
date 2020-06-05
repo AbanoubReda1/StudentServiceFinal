@@ -27,14 +27,12 @@ namespace StudentService.Models
         public string Semester { get; set; }
         public string Year { get; set; }
         public int InstructorID { get; set; }
-
-
+    
         public virtual Course Course { get; set; }
         public virtual Instructor Instructor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Material> Materials { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Task> Tasks { get; set; }
-
     }
 }

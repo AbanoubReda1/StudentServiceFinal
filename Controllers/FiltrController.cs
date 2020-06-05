@@ -43,8 +43,8 @@ namespace StudentService.Views
         }
         public ActionResult Filter(string id)
         {
-            
-            return View();
+            var sec = db.Sections.Where(a => a.CourseCode == id);
+            return View(sec.ToList());
 
           
 

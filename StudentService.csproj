@@ -173,6 +173,9 @@
     <Compile Include="Models\Department.cs">
       <DependentUpon>StudentService.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Event.cs">
+      <DependentUpon>StudentService.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Extended\Student.cs" />
     <Compile Include="Models\filtr.cs" />
     <Compile Include="Models\Instructor.cs">
@@ -881,18 +884,26 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\aa.jpg" />
+    <Content Include="img\ASS.png" />
     <Content Include="img\bg.jpg" />
     <Content Include="img\circle_close_delete_-128.png" />
+    <Content Include="img\final.jpg" />
+    <Content Include="img\Fmid.png" />
     <Content Include="img\images.png" />
     <Content Include="img\login-w-icon.png" />
+    <Content Include="img\mat.jpg" />
+    <Content Include="img\Mid.png" />
+    <Content Include="img\pp.png" />
+    <Content Include="img\qu.jpg" />
     <Content Include="img\sidebar-1.jpg" />
     <Content Include="img\sidebar-2.jpg" />
     <Content Include="img\sidebar-3.jpg" />
     <Content Include="img\sidebar-4.jpg" />
     <Content Include="Models\StudentService.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>StudentService.Context.cs</LastGenOutput>
       <DependentUpon>StudentService.edmx</DependentUpon>
+      <LastGenOutput>StudentService.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\StudentService.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -901,13 +912,6 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\StudentService.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>StudentService.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\StudentService.edmx.diagram">
-      <DependentUpon>StudentService.edmx</DependentUpon>
-    </Content>
     <Content Include="assets\css\material-kit.css.map" />
     <Content Include="assets\ckeditor\CHANGES.md" />
     <Content Include="assets\ckeditor\LICENSE.md" />
@@ -924,6 +928,13 @@
     <Content Include="assets\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="assets\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="assets\ckeditor\skins\moono-lisa\readme.md" />
+    <EntityDeploy Include="Models\StudentService.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StudentService.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StudentService.edmx.diagram">
+      <DependentUpon>StudentService.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -935,6 +946,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="img\logo.png" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

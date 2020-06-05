@@ -17,6 +17,7 @@ namespace StudentService.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Student()
         {
+            this.Events = new HashSet<Event>();
             this.Roles = new HashSet<Role>();
         }
     
@@ -30,6 +31,8 @@ namespace StudentService.Models
         public bool Verification { get; set; }
         public Nullable<System.Guid> ActivationCode { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Event> Events { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Role> Roles { get; set; }
     }

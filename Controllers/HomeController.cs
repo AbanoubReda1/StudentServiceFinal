@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentService.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace StudentService.Controllers
 {
     public class HomeController : Controller
     {
+        private StudentServiceEntities db = new StudentServiceEntities();
         public ActionResult Index()
         {
             return View();
@@ -22,9 +24,10 @@ namespace StudentService.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            
 
             return View();
         }
+    
     }
 }

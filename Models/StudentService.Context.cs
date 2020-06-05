@@ -27,6 +27,7 @@ namespace StudentService.Models
     
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
+        public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<Instructor> Instructors { get; set; }
         public virtual DbSet<Material> Materials { get; set; }
         public virtual DbSet<Project> Projects { get; set; }

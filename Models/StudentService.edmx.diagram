@@ -4,20 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3a22f700945f40ac8ef51bc278af7467" Name="Diagram1">
+      <Diagram DiagramId="5e9175f4b03a45d0ad934864955576e4" Name="Diagram1">
         <EntityTypeShape EntityType="StudentServiceModel.Course" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentServiceModel.Department" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentServiceModel.Event" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentServiceModel.Instructor" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentServiceModel.Material" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentServiceModel.Project" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentServiceModel.Role" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentServiceModel.Role" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentServiceModel.Section" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentServiceModel.Student" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentServiceModel.Student" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentServiceModel.Task" Width="1.5" PointX="10.5" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentServiceModel.Transcript" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentServiceModel.Type" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="StudentServiceModel.FK_Course_Department" ManuallyRouted="false" />
         <AssociationConnector Association="StudentServiceModel.FK_Section_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentServiceModel.FK__Events__StudentI__49C3F6B7" ManuallyRouted="false" />
         <AssociationConnector Association="StudentServiceModel.FK_Section_Instructor" ManuallyRouted="false" />
         <AssociationConnector Association="StudentServiceModel.FK_Material_Section" ManuallyRouted="false" />
         <AssociationConnector Association="StudentServiceModel.FK_Role_Student" ManuallyRouted="false" />
