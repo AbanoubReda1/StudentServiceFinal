@@ -11,18 +11,17 @@ namespace StudentService.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Event
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Drawing;
+
+    public partial class Request
     {
-        public int EventID { get; set; }
-        public string Subject { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public  int RequestId { get; set; }
+        public string CourseName { get; set; }
+        public string Type { get; set; }
         public string Description { get; set; }
-        public Nullable<System.DateTime> Start { get; set; }
-        public Nullable<System.DateTime> End { get; set; }
-        public string ThemeColor { get; set; }
-        public Nullable<bool> IsFullDay { get; set; }
-        public string StudentID { get; set; }
-    
-        public virtual Student Student { get; set; }
     }
 }

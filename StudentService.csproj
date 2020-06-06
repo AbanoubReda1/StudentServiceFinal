@@ -149,6 +149,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\FiltrController.cs" />
@@ -157,6 +158,8 @@
     <Compile Include="Controllers\MaterialsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\SectionsController.cs" />
+    <Compile Include="Controllers\StdMaterialsController.cs" />
+    <Compile Include="Controllers\StdTaskController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\TasksController.cs" />
@@ -173,9 +176,6 @@
     <Compile Include="Models\Department.cs">
       <DependentUpon>StudentService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Event.cs">
-      <DependentUpon>StudentService.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Extended\Student.cs" />
     <Compile Include="Models\filtr.cs" />
     <Compile Include="Models\Instructor.cs">
@@ -187,6 +187,9 @@
       <DependentUpon>StudentService.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Project.cs">
+      <DependentUpon>StudentService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Request.cs">
       <DependentUpon>StudentService.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Role.cs">
@@ -690,7 +693,6 @@
     <Content Include="assets\js\core\jquery.min.js" />
     <Content Include="assets\js\core\popper.min.js" />
     <Content Include="assets\js\material-dashboard.js" />
-    <Content Include="assets\js\material-dashboard.js.map" />
     <Content Include="assets\js\material-dashboard.min.js" />
     <Content Include="assets\js\plugins\arrive.min.js" />
     <Content Include="assets\js\plugins\bootstrap-datetimepicker.js" />
@@ -894,6 +896,7 @@
     <Content Include="img\login-w-icon.png" />
     <Content Include="img\mat.jpg" />
     <Content Include="img\Mid.png" />
+    <Content Include="img\pdf.png" />
     <Content Include="img\pp.png" />
     <Content Include="img\qu.jpg" />
     <Content Include="img\sidebar-1.jpg" />
@@ -1020,6 +1023,10 @@
     <Content Include="Views\Filtr\Courses.cshtml" />
     <Content Include="Views\Filtr\Filter.cshtml" />
     <Content Include="Views\Shared\test.cshtml" />
+    <Content Include="Views\Requests\Create.cshtml" />
+    <Content Include="Views\Requests\Index.cshtml" />
+    <Content Include="Views\StdMaterials\Index.cshtml" />
+    <Content Include="Views\StdTask\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

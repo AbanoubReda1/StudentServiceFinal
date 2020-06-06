@@ -11,9 +11,13 @@ namespace StudentService.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Task
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TaskNumber { get; set; }
         public string DepartmentCode { get; set; }
         public string CourseCode { get; set; }

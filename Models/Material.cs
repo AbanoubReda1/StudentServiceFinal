@@ -11,10 +11,14 @@ namespace StudentService.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Web;
 
     public partial class Material
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MaterialNumber { get; set; }
         public string DepartmentCode { get; set; }
         public string CourseCode { get; set; }
@@ -25,6 +29,7 @@ namespace StudentService.Models
         public string LectureName { get; set; }
         public string PDF { get; set; }
         public HttpPostedFileBase file { get; set; }
+
 
         public virtual Section Section { get; set; }
     }

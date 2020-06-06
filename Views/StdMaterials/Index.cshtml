@@ -1,0 +1,131 @@
+﻿@model IEnumerable<StudentService.Models.Material>
+
+@{
+    ViewBag.Title = "Materials";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<centr><h3>Materials</h3></centr>
+
+<br/>
+<div class="row">
+    <div class="col-md-10 ml-auto mr-auto ">
+        <div class="container">
+            <style>
+
+
+
+                .card .card-header.card-header-image {
+                    filter: invert(1);
+                }
+
+                .card .card-category {
+
+                    
+                  
+                    font-size: inaial;
+                }
+            </style>
+
+
+
+            @using (Html.BeginForm())
+            {
+
+                <div class="row">
+
+                    <div class="form-group col-lg-4">
+
+
+                        @Html.DropDownList("DepartmentCode", ViewBag.Departmentlist as SelectList, "Select Department", htmlAttributes: new { @class = "form-control" })
+
+                    </div>
+                    <div class="form-group col-lg-4">
+
+
+                        @Html.DropDownList("CourseCode", new SelectList(""), "Select Course", htmlAttributes: new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group col-lg-4">
+
+                        <input type="submit" value="Search" class="btn btn-primary" />
+
+                    </div>
+
+                </div>
+
+            }
+
+
+            <div class="row">
+
+                @foreach (var item in Model)
+                {
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card card-blog">
+                            <div class="card-header card-header-image">
+
+                                <img class="img" src="~/img/pdf.png">
+
+                                <div class="colored-shadow" style="background-image: url('/img/pdf.png'); opacity: 1;"></div>
+                            </div>
+                            <div class="card-body ">
+                                <h6 class="card-category text-primary">
+                                    @Html.DisplayFor(modelItem => item.LectureNumber)
+                                </h6>
+                                <h4 class="card-category text-primary">
+                                    @Html.DisplayFor(modelItem => item.LectureName)
+
+                                </h4>
+                            </div>
+                            <div class="card-footer ">
+                                <div class="author">
+                                    <a href="~/StudeCourse/DownloadFile?filePath=@item.PDF"><img src="~/img/images.png" style="width: 15px; height: 15px" title="Download" /></a>
+                                    <span> </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                }
+            </div>
+
+            <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    $("#DepartmentCode").change(function () {
+                        $.get("/StdMaterials/GetCourse", { DepartmentCode: $("#DepartmentCode").val() }, function (data) {
+                            $("#CourseCode").empty();
+
+                            $.each(data, function (index, row) {
+                                $("#CourseCode").append("<option value='" + row.CourseCode + "'>" + row.CourseTitle + "</option>")
+
+                            });
+                        });
+
+
+                    })
+                });
+
+            </script>
+
+
+        </div>
+    </div>
+    <div class="col-md-2 mr-auto ml-auto stats">
+        <h4 class="title">Stats</h4>
+        <ul class="list-unstyled">
+            <li><b>5</b> Courses</li>
+            <li><b>10</b>Quizess </li>
+            <li><b>20</b> Assingment</li>
+            <li><b>3</b> Project</li>
+        </ul>
+        <hr>
+        <h4 class="title">About his Work</h4>
+        <p class="description">This website help Student to give him sample of quiz or material that he need to practice before exam</p>
+        <hr>
+
+    </div>
+</div>
