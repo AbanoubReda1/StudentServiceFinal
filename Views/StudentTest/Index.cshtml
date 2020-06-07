@@ -1,0 +1,91 @@
+﻿@model IEnumerable<StudentService.Models.Test>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+    <div class="row">
+        <div class="col-md-9 ml-auto mr-auto ">
+            @foreach (var item in Model)
+            {
+                <h3>             </h3>
+
+
+                <table class="table table-primary">
+
+
+
+                    <tr>
+                        <td>@item.Question</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" id="Option1" name="@item.QuestionId" class="radio" value="@item.Option1" />@item.Option1<br />
+                            <input type="radio" id="Option2" name="@item.QuestionId" class="radio" value="@item.Option2" />@item.Option2<br />
+                            <input type="radio" id="Option3" name="@item.QuestionId" class="radio" value="@item.Option3" />@item.Option3<br />
+
+                            <label id="labcourrectanser" name="@item.QuestionId" class="radio" style="display:none;"><b style="color:green;">Courect Answer: @item.Option4</b></label>
+                        </td>
+                    </tr>
+
+
+                </table>
+
+            }
+
+
+            <button id="btn1" type="button" class="btn btn-primary btn-round" onclick="dipalyreults();">Submit</button>
+            <br />
+            <label id="Selectradio"></label>
+        </div>
+            <div class="col-md-2 mr-auto ml-auto stats">
+                <h4 class="title">Stats</h4>
+                <ul class="list-unstyled">
+                    <li><b>5</b> Courses</li>
+                    <li><b>10</b>Quizess </li>
+                    <li><b>20</b> Assingment</li>
+                    <li><b>3</b> Project</li>
+                </ul>
+                <hr>
+                <h4 class="title">About his Work</h4>
+                <p class="description">This website help Student to give him sample of quiz or material that he need to practice before exam</p>
+                <hr>
+
+            </div>
+    </div>
+
+
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <script>
+
+            $(document).ready(function () {
+                $("#btn1").click(function () {
+
+                    $(".radio").show();
+                    $(".redio").attr("disabled", true)
+                });
+            });
+
+
+
+
+
+            function dipalyreults() {
+                document.getElementById("Selectradio").innerHTML = "";
+                var results = document.getElementsByTagName('input');
+                for (i = 0; i < results.length; i++) {
+                    if (results[i].type = "radio") {
+                        {
+                            if (results[i].checked) {
+
+                                document.getElementById("Selectradio").innerHTML
+                                    += "Q )" + results[i].name + "Your Selected Answer Is :" + results[i].value + "<br/>";
+
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        </script>

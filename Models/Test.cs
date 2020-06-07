@@ -11,26 +11,20 @@ namespace StudentService.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    public partial class Task
+    
+    public partial class Test
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
-
-        public int TaskNumber { get; set; }
+        public int QuestionId { get; set; }
         public string DepartmentCode { get; set; }
         public string CourseCode { get; set; }
         public Nullable<int> SectionNumber { get; set; }
-        public string Semester { get; set; }
-        public string Year { get; set; }
-        public string TaskHeader { get; set; }
-        public string TaskDetails { get; set; }
+        public string Question { get; set; }
+        public string Option1 { get; set; }
+        public string Option2 { get; set; }
+        public string Option3 { get; set; }
+        public string Option4 { get; set; }
         public string Type { get; set; }
     
-        public virtual Section Section { get; set; }
         public virtual Type Type1 { get; set; }
     }
 }

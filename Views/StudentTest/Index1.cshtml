@@ -1,0 +1,97 @@
+﻿@model IEnumerable<StudentService.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<style>
+    .card .card-body {
+        padding: 90px;
+        content: "";
+        background-color: rgba(0,0,0,.56);
+        border-radius: 6px;
+    }
+    .card-background {
+        background-position: 50%;
+        background-size: cover;
+        
+    }
+    .card-title {
+        color: #eee;
+        font-size: x-large;
+    }
+</style>
+
+<div class="tab-content tab-space">
+    <div class="tab-pane work active show" id="work">
+        <div class="row">
+            <div class="col-md-9 ml-auto mr-auto ">
+                <h4 class="title">Select Department</h4>
+                <div class="row collections">
+                    <div class="col-md-6 flex-xl-row">
+                        <div class="card card-background" style=" background-image: url('/assets/img/CS.jpg')">
+                            <a href="@Url.Action("Courses", "StudentTest", new { id ="CS" })"></a>
+                            <div class="card-body">
+                                <label class="badge badge-warning">CS</label>
+                                <a href="@Url.Action("Courses", "StudentTest", new { id ="CS" })">
+                                    <h2 class="card-title">Computer Science</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-background" style="background-image: url('/assets/img/dm.jpg')">
+                            <a href="@Url.Action("Courses", "StudentTest", new { id ="DM" })"></a>
+                            <div class="card-body">
+                                <label class="badge badge-info">DM</label>
+                                <a href="@Url.Action("Courses", "StudentTest", new { id ="DM" })">
+                                    <h2 class="card-title">Digital Media</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-background" style="background-image: url('/assets/img/Is.jpg')">
+                            <a href="@Url.Action("Courses", "StudentTest", new { id ="IS" })"></a>
+                            <div class="card-body">
+                                <label class="badge badge-danger">IS</label>
+                                <a href="@Url.Action("Courses", "StudentTest", new { id ="IS" })">
+                                    <h2 class="card-title">Information System</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-background" style="background-image: url('/assets/img/g.png')">
+                            <a href="@Url.Action("Courses", "StudentTest", new { id ="GE" })"></a>
+                            <div class="card-body">
+                                <label class="badge badge-success">G</label>
+                                <a href="@Url.Action("Courses", "StudentTest", new { id ="GE" })">
+                                    <h2 class="card-title">Genral</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 mr-auto ml-auto stats">
+                <h4 class="title">Stats</h4>
+                <ul class="list-unstyled">
+                    <li><b>5</b> Courses</li>
+                    <li><b>10</b>Quizess </li>
+                    <li><b>20</b> Assingment</li>
+                    <li><b>3</b> Project</li>
+                </ul>
+                <hr>
+                <h4 class="title">About his Work</h4>
+                <p class="description">This website help Student to give him sample of quiz or material that he need to practice before exam</p>
+                <hr>
+               
+            </div>
+        </div>
+    </div>
+    
+    
+</div>

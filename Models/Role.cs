@@ -11,13 +11,9 @@ namespace StudentService.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class Role
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string RoleNumber { get; set; }
         public string Role1 { get; set; }
         public string StudentID { get; set; }

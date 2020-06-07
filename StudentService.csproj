@@ -164,7 +164,9 @@
     <Compile Include="Controllers\StudeCourseController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\StudentTestController.cs" />
     <Compile Include="Controllers\TasksController.cs" />
+    <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Controllers\TranscriptsController.cs" />
     <Compile Include="Controllers\TypesController.cs" />
     <Compile Include="Crypto.cs" />
@@ -219,6 +221,9 @@
       <DependentUpon>StudentService.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Task.cs">
+      <DependentUpon>StudentService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Test.cs">
       <DependentUpon>StudentService.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Transcript.cs">
@@ -933,6 +938,7 @@
     <Content Include="assets\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="assets\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="assets\ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="assets\js\material-dashboard.js.map" />
     <EntityDeploy Include="Models\StudentService.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>StudentService.Designer.cs</LastGenOutput>
@@ -940,7 +946,6 @@
     <Content Include="Models\StudentService.edmx.diagram">
       <DependentUpon>StudentService.edmx</DependentUpon>
     </Content>
-    <Content Include="assets\js\material-dashboard.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1038,6 +1043,15 @@
     <Content Include="Views\ProjectStd\Index.cshtml" />
     <Content Include="Views\StudeCourse\Index.cshtml" />
     <Content Include="Views\ProjectStd\All.cshtml" />
+    <Content Include="Views\Tests\Create.cshtml" />
+    <Content Include="Views\Tests\Delete.cshtml" />
+    <Content Include="Views\Tests\Details.cshtml" />
+    <Content Include="Views\Tests\Edit.cshtml" />
+    <Content Include="Views\Tests\Index.cshtml" />
+    <Content Include="Views\StudentTest\Index.cshtml" />
+    <Content Include="Views\StudentTest\Courses.cshtml" />
+    <Content Include="Views\StudentTest\Filter.cshtml" />
+    <Content Include="Views\StudentTest\Index1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

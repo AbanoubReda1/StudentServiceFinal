@@ -4,18 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="58cf8467f66a48e0a827f6ce3d4d18a9" Name="Diagram1">
-        <EntityTypeShape EntityType="StudentServiceModel.Course" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentServiceModel.Department" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentServiceModel.Instructor" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+      <Diagram DiagramId="70c1644d205d4bf994967671332749be" Name="Diagram1">
+        <EntityTypeShape EntityType="StudentServiceModel.Course" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentServiceModel.Department" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentServiceModel.Instructor" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentServiceModel.Material" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentServiceModel.Project" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentServiceModel.Request" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentServiceModel.Role" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentServiceModel.Project" Width="1.5" PointX="5.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentServiceModel.Request" Width="1.5" PointX="7.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentServiceModel.Role" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentServiceModel.Section" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentServiceModel.Student" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentServiceModel.Task" Width="1.5" PointX="10.5" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentServiceModel.Transcript" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentServiceModel.Task" Width="1.5" PointX="10.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentServiceModel.Test" Width="1.5" PointX="10.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentServiceModel.Transcript" Width="1.5" PointX="5.75" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentServiceModel.Type" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="StudentServiceModel.FK_Course_Department" ManuallyRouted="false" />
         <AssociationConnector Association="StudentServiceModel.FK_Section_Course" ManuallyRouted="false" />
@@ -24,6 +25,7 @@
         <AssociationConnector Association="StudentServiceModel.FK_Role_Student" ManuallyRouted="false" />
         <AssociationConnector Association="StudentServiceModel.FK_Task_Section" ManuallyRouted="false" />
         <AssociationConnector Association="StudentServiceModel.FK_Task_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentServiceModel.FK_Test_Type" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

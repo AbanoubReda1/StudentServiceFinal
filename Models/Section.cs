@@ -11,9 +11,7 @@ namespace StudentService.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class Section
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,7 +23,6 @@ namespace StudentService.Models
     
         public string DepartmentCode { get; set; }
         public string CourseCode { get; set; }
-   
         public int SectionNumber { get; set; }
         public string Semester { get; set; }
         public string Year { get; set; }

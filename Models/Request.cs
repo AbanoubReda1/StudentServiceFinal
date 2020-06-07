@@ -13,13 +13,15 @@ namespace StudentService.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Drawing;
 
     public partial class Request
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public  int RequestId { get; set; }
+
+
+        public int RequestId { get; set; }
         public string CourseName { get; set; }
         public string Type { get; set; }
         public string Description { get; set; }

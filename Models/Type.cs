@@ -18,6 +18,7 @@ namespace StudentService.Models
         public Type()
         {
             this.Tasks = new HashSet<Task>();
+            this.Tests = new HashSet<Test>();
         }
     
         public string TypeID { get; set; }
@@ -25,5 +26,7 @@ namespace StudentService.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Task> Tasks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Test> Tests { get; set; }
     }
 }

@@ -1,0 +1,220 @@
+﻿@model IEnumerable<StudentService.Models.Section>
+@{
+    ViewBag.Title = "Filter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}@foreach (var item in Model)
+{
+
+    <h3>@Html.DisplayFor(Model => item.Course.CourseTitle)</h3>
+    <br />
+
+    <style>
+
+
+
+
+        .card .card-header.card-header-image {
+            filter: invert(1);
+        }
+
+        .card-title {
+            color: #eee;
+            font-size: x-large;
+        }
+    </style>
+
+    <div class="row">
+
+
+        <div class="col-lg-3 col-md-6">
+            <div class="card card-blog">
+                <div class="card-header card-header-image">
+                    <a href="@Url.Action("Index","StudentTest",new { id=item.CourseCode,id2="F"})">
+                        <img class="img" src="~/img/logo.png">
+                    </a>
+                    <div class="colored-shadow" style="background-image: url('/img/logo.png'); opacity: 1;"></div>
+                </div>
+                <div class="card-body ">
+                    
+                   
+                    <h4 class="card-title">
+                        <a href="@Url.Action("Index","StudentTest",new { id=item.CourseCode,id2="F"})">Materials
+                        </a>
+                    </h4>
+                </div>
+                <div class="card-footer ">
+                    <div class="author">
+                        <a href="">
+
+                            <span> </span>
+                        </a>
+                    </div>
+                    <div class="stats ml-auto">
+                        <i class="material-icons">
+                            schedule
+                        </i>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="card card-blog">
+                <div class="card-header card-header-image">
+                    <a href="@Url.Action("Index","StudentTest",new { id=item.CourseCode,id2="F"})">
+                        <img class="img" src="~/img/Mid.png">
+                    </a>
+                    <div class="colored-shadow" style="background-image: url(/img/Mid.png); opacity: 1;"></div>
+                </div>
+                <div class="card-body ">
+                   
+                    <h4 class="card-title">
+                        <a href="@Url.Action("Index","StudentTest",new { id=item.CourseCode,id2="2nd-mid"})"> Second Midterm
+                        </a>
+                    </h4>
+                </div>
+                <div class="card-footer ">
+                    <div class="author">
+                        <a href="">
+
+                            <span> </span>
+                        </a>
+                    </div>
+                    <div class="stats ml-auto">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="card card-blog">
+                <div class="card-header card-header-image">
+                    <a href="#pablo">
+                        <img class="img" src="~/img/ASS.png">
+                    </a>
+                    <div class="colored-shadow" style="background-image: url(/img/ASS.png); opacity: 1;"></div>
+                </div>
+                <div class="card-body ">
+                    
+                    <h4 class="card-title">
+                        <a href="@Url.Action("Index","StudentTest",new { id=item.CourseCode,id2="ASGMT"})">Assignment</a>
+                    </h4>
+                </div>
+                <div class="card-footer ">
+                    <div class="author">
+                        <a href="">
+
+                            <span> </span>
+                        </a>
+                    </div>
+                    <div class="stats ml-auto">
+                        <i class="material-icons">schedule</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-2 mr-auto ml-auto stats">
+            <h4 class="title">Stats</h4>
+            <ul class="list-unstyled">
+                <li><b>5</b> Courses</li>
+                <li><b>10</b>Quizess </li>
+                <li><b>20</b> Assingment</li>
+                <li><b>3</b> Project</li>
+            </ul>
+            <hr>
+            <h4 class="title">About his Work</h4>
+            <p class="description">This website help Student to give him sample of quiz or material that he need to practice before exam</p>
+            <hr>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="card card-blog">
+                <div class="card-header card-header-image">
+                    <a href="#pablo">
+                        <img class="img" src="~/img/Fmid.png">
+                    </a>
+                    <div class="colored-shadow" style="background-image: url(/img/Fmid.png); opacity: 1;"></div>
+                </div>
+                <div class="card-body ">
+                    
+                    <h4 class="card-title">
+                        <a href="@Url.Action("Index","StudentTest",new { id=item.CourseCode,id2="1st-mid"})">Firt-Midterm</a>
+                    </h4>
+                </div>
+                <div class="card-footer ">
+                    <div class="author">
+                        <a href="">
+
+                            <span> </span>
+                        </a>
+                    </div>
+                    <div class="stats ml-auto">
+                        <i class="material-icons">schedule</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="card card-blog">
+                <div class="card-header card-header-image">
+                    <a href="@Url.Action("Index","StudentTest",new { id=item.CourseCode,id2="F"})">
+                        <img class="img" src="~/img/final.jpg">
+                    </a>
+                    <div class="colored-shadow" style="background-image: url(/img/final.jpg); opacity: 1;"></div>
+                </div>
+                <div class="card-body ">
+                    
+                    <h4 class="card-title">
+                        <a href="@Url.Action("Index","StudentTest",new { id=item.CourseCode,id2="F"})">Final
+                        </a>
+                    </h4>
+                </div>
+                <div class="card-footer ">
+                    <div class="author">
+                        <a href="">
+
+                            <span> </span>
+                        </a>
+                    </div>
+                    <div class="stats ml-auto">
+                        <i class="material-icons">schedule</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="card card-blog">
+                <div class="card-header card-header-image">
+                    <a href="#pablo">
+                        <img class="img" src="~/img/qu.jpg">
+                    </a>
+                    <div class="colored-shadow" style="background-image: url(/img/qu.jpg); opacity: 1;"></div>
+                </div>
+                <div class="card-body ">
+                   
+                    <h4 class="card-title">
+                        <a href="@Url.Action("Index","StudentTest",new { id=item.CourseCode,id2="Q"})">QUIZ</a>
+                    </h4>
+                </div>
+                <div class="card-footer ">
+                    <div class="author">
+                        <a href="">
+
+                            <span> </span>
+                        </a>
+                    </div>
+                    <div class="stats ml-auto">
+                        <i class="material-icons">schedule</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

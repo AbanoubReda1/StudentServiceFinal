@@ -19,6 +19,7 @@ namespace StudentService.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public int MaterialNumber { get; set; }
         public string DepartmentCode { get; set; }
         public string CourseCode { get; set; }
@@ -29,8 +30,6 @@ namespace StudentService.Models
         public string LectureName { get; set; }
         public string PDF { get; set; }
         public HttpPostedFileBase file { get; set; }
-
-
         public virtual Section Section { get; set; }
     }
 }

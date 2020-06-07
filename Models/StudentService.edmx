@@ -114,6 +114,21 @@
           <Property Name="TaskDetails" Type="nvarchar(max)" />
           <Property Name="Type" Type="nvarchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="QuestionId" />
+          </Key>
+          <Property Name="QuestionId" Type="int" Nullable="false" />
+          <Property Name="DepartmentCode" Type="nchar" MaxLength="2" />
+          <Property Name="CourseCode" Type="nchar" MaxLength="7" />
+          <Property Name="SectionNumber" Type="int" />
+          <Property Name="Question" Type="nvarchar(max)" />
+          <Property Name="Option1" Type="nvarchar(max)" />
+          <Property Name="Option2" Type="nvarchar(max)" />
+          <Property Name="Option3" Type="nvarchar(max)" />
+          <Property Name="Option4" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nvarchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="Transcript">
           <Key>
             <PropertyRef Name="StudentID" />
@@ -249,6 +264,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Test_Type">
+          <End Role="Type" Type="Self.Type" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Test" Type="Self.Test" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Test">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="StudentServiceModelStoreContainer">
           <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
@@ -260,6 +289,7 @@
           <EntitySet Name="Section" EntityType="Self.Section" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transcript" EntityType="Self.Transcript" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Course_Department" Association="Self.FK_Course_Department">
@@ -289,6 +319,10 @@
           <AssociationSet Name="FK_Task_Type" Association="Self.FK_Task_Type">
             <End Role="Type" EntitySet="Type" />
             <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Test_Type" Association="Self.FK_Test_Type">
+            <End Role="Type" EntitySet="Type" />
+            <End Role="Test" EntitySet="Test" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -418,6 +452,22 @@
           <NavigationProperty Name="Section" Relationship="Self.FK_Task_Section" FromRole="Task" ToRole="Section" />
           <NavigationProperty Name="Type1" Relationship="Self.FK_Task_Type" FromRole="Task" ToRole="Type" />
         </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="QuestionId" />
+          </Key>
+          <Property Name="QuestionId" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentCode" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="CourseCode" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="SectionNumber" Type="Int32" />
+          <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Type1" Relationship="Self.FK_Test_Type" FromRole="Test" ToRole="Type" />
+        </EntityType>
         <EntityType Name="Transcript">
           <Key>
             <PropertyRef Name="StudentID" />
@@ -437,6 +487,7 @@
           <Property Name="TypeID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_Type" FromRole="Type" ToRole="Task" />
+          <NavigationProperty Name="Tests" Relationship="Self.FK_Test_Type" FromRole="Type" ToRole="Test" />
         </EntityType>
         <Association Name="FK_Course_Department">
           <End Role="Department" Type="Self.Department" Multiplicity="1">
@@ -554,6 +605,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Test_Type">
+          <End Role="Type" Type="Self.Type" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Test" Type="Self.Test" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Test">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="StudentServiceEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Courses" EntityType="Self.Course" />
           <EntitySet Name="Departments" EntityType="Self.Department" />
@@ -565,6 +630,7 @@
           <EntitySet Name="Sections" EntityType="Self.Section" />
           <EntitySet Name="Students" EntityType="Self.Student" />
           <EntitySet Name="Tasks" EntityType="Self.Task" />
+          <EntitySet Name="Tests" EntityType="Self.Test" />
           <EntitySet Name="Transcripts" EntityType="Self.Transcript" />
           <EntitySet Name="Types" EntityType="Self.Type" />
           <AssociationSet Name="FK_Course_Department" Association="Self.FK_Course_Department">
@@ -594,6 +660,10 @@
           <AssociationSet Name="FK_Task_Type" Association="Self.FK_Task_Type">
             <End Role="Type" EntitySet="Types" />
             <End Role="Task" EntitySet="Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Test_Type" Association="Self.FK_Test_Type">
+            <End Role="Type" EntitySet="Types" />
+            <End Role="Test" EntitySet="Tests" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -712,6 +782,22 @@
                 <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="TaskHeader" ColumnName="TaskHeader" />
                 <ScalarProperty Name="TaskDetails" ColumnName="TaskDetails" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tests">
+            <EntityTypeMapping TypeName="StudentServiceModel.Test">
+              <MappingFragment StoreEntitySet="Test">
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+                <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+                <ScalarProperty Name="SectionNumber" ColumnName="SectionNumber" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="Option3" ColumnName="Option3" />
+                <ScalarProperty Name="Option4" ColumnName="Option4" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -19,11 +19,13 @@ namespace StudentService.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+
+       
         public int ProjectID { get; set; }
         public string ProjectName { get; set; }
         public string Abstract { get; set; }
         public string Professor { get; set; }
-
         public HttpPostedFileBase file { get; set; }
     }
 }

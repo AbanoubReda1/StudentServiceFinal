@@ -1,0 +1,168 @@
+﻿@model IEnumerable<StudentService.Models.Course>
+
+@{
+    ViewBag.Title = "Courses";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Courses</h2>
+<style>
+</style>
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+
+        if (item.DepartmentCode == "CS")
+        {
+
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card card-blog">
+                    <div class="card-header card-header-image">
+                        <a href="#pablo">
+                            <img class="img" src="~/assets/img/CS.jpg">
+                        </a>
+                        <div class="colored-shadow" style="background-image: url(/assets/img/CS.jpg); opacity: 1;"></div>
+                    </div>
+                    <div class="card-body ">
+                        <h6 class="card-category text-danger">
+                            <i class="material-icons">Course</i> @Html.DisplayFor(modelItem => item.CourseCode)
+                        </h6>
+                        <h4 class="card-title">
+                         
+
+                            <a href="@Url.Action("Filter","StudentTest",new { id=item.CourseCode})">
+
+                                @Html.DisplayFor(modelItem => item.CourseTitle)
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="card-footer ">
+                        <div class="author">
+                            <a href="">
+
+                                <span> @Html.DisplayFor(modelItem => item.Department.DepartmentName)</span>
+                            </a>
+                        </div>
+                        <div class="stats ml-auto">
+                            <i class="material-icons">schedule</i> CrediteHour-@Html.DisplayFor(modelItem => item.CrediteHour)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        }
+        else if (item.DepartmentCode == "DM")
+        {
+
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card card-blog">
+                    <div class="card-header card-header-image">
+                        <a href="#pablo">
+                            <img class="img" src="~/assets/img/dm.jpg">
+                        </a>
+                        <div class="colored-shadow" style="background-image: url(/assets/img/dm.jpg); opacity: 1;"></div>
+                    </div>
+                    <div class="card-body ">
+                        <h6 class="card-category text-danger">
+                            <i class="material-icons">Course</i> @Html.DisplayFor(modelItem => item.CourseCode)
+                        </h6>
+                        <h4 class="card-title">
+                            <a href="#pablo">@Html.DisplayFor(modelItem => item.CourseTitle)</a>
+                        </h4>
+                    </div>
+                    <div class="card-footer ">
+                        <div class="author">
+                            <a href="#pablo">
+
+                                <span> @Html.DisplayFor(modelItem => item.Department.DepartmentName)</span>
+                            </a>
+                        </div>
+                        <div class="stats ml-auto">
+                            <i class="material-icons">schedule</i> CrediteHour-@Html.DisplayFor(modelItem => item.CrediteHour)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+        else if (item.DepartmentCode == "GE")
+        {
+
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card card-blog">
+                    <div class="card-header card-header-image">
+                        <a href="#pablo">
+                            <img class="img" src="~/assets/img/g.jpg">
+                        </a>
+                        <div class="colored-shadow" style="background-image: url(/assets/img/g.png); opacity: 1;"></div>
+                    </div>
+                    <div class="card-body ">
+                        <h6 class="card-category text-danger">
+                            <i class="material-icons">Course</i> @Html.DisplayFor(modelItem => item.CourseCode)
+                        </h6>
+                        <h4 class="card-title">
+                            <a href="#pablo">@Html.DisplayFor(modelItem => item.CourseTitle)</a>
+                        </h4>
+                    </div>
+                    <div class="card-footer ">
+                        <div class="author">
+                            <a href="#pablo">
+
+                                <span> @Html.DisplayFor(modelItem => item.Department.DepartmentName)</span>
+                            </a>
+                        </div>
+                        <div class="stats ml-auto">
+                            <i class="material-icons">schedule</i> CrediteHour-@Html.DisplayFor(modelItem => item.CrediteHour)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+        else if (item.DepartmentCode == "IS")
+        {
+
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card card-blog">
+                    <div class="card-header card-header-image">
+                        <a href="#pablo">
+                            <img class="img" src="~/assets/img/Is.jpg">
+                        </a>
+                        <div class="colored-shadow" style="background-image: url(/assets/img/Is.jpg); opacity: 1;"></div>
+                    </div>
+                    <div class="card-body ">
+                        <h6 class="card-category text-danger">
+                            <i class="material-icons">Course</i> @Html.DisplayFor(modelItem => item.CourseCode)
+                        </h6>
+                        <h4 class="card-title">
+                            <a href="#pablo">@Html.DisplayFor(modelItem => item.CourseTitle)</a>
+                        </h4>
+                    </div>
+                    <div class="card-footer ">
+                        <div class="author">
+                            <a href="#pablo">
+
+                                <span> @Html.DisplayFor(modelItem => item.Department.DepartmentName)</span>
+                            </a>
+                        </div>
+                        <div class="stats ml-auto">
+                            <i class="material-icons">schedule</i> CrediteHour-@Html.DisplayFor(modelItem => item.CrediteHour)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+        
+
+    }
+</div>
+
+
