@@ -1,0 +1,116 @@
+﻿@model IEnumerable<StudentService.Models.Course>
+
+@{
+    ViewBag.Title = "Syllabus";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<style>
+    .card .card-header.card-header-image {
+        filter: invert(1);
+    }
+
+    .card-title {
+        color: #eee;
+        font-size: x-large;
+    }
+</style>
+<div class="container">
+    @using (Html.BeginForm())
+    {
+    <div class="row">
+        <div class="form-group col-lg-4">
+
+
+            @Html.DropDownList("DepartmentCode", ViewBag.Departmentlist as SelectList, "Select Department", htmlAttributes: new { @class = "form-control" })
+        </div>
+
+        <div class="form-group col-lg-4">
+
+
+
+
+            @Html.DropDownList("CourseCode", new SelectList(""), "Select Course", htmlAttributes: new { @class = "form-control" })
+
+        </div>
+        <div class="form-group col-lg-4">
+
+            <input type="submit" value="Search" class="btn btn-primary" />
+
+        </div>
+    </div>
+    }
+
+</div>
+
+<br />
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+
+
+        @*<div class="card-deck col-lg-3">
+                <div class="card">
+                    <img src="~/img/pdf.png" class="card-img-top" alt="..." height="150" width="150">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Department.DepartmentName)</h5>
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.CourseTitle)</h5>
+
+                        <text>
+                            <a href="~/StudeCourse/DownloadFile?filePath=@item.Syllabus"><img src="~/img/images.png" style="width: 15px; height: 15px" title="Download" /></a>
+                            <p class="card-text"><small class="text-muted">Number of Credit Hour : @Html.DisplayFor(modelItem => item.CrediteHour)</small></p>
+                    </div>
+                </div>
+
+            </div>*@
+
+        <div class="col-lg-3 col-md-6">
+            <div class="card card-blog">
+                <div class="card-header card-header-image">
+
+                    <img class="img" src="~/img/pdf.png">
+
+                    <div class="colored-shadow" style="background-image: url('/img/pdf.png'); opacity: 1;"></div>
+                </div>
+                <div class="card-body ">
+                    <h6 class="card-category text-primary">
+                       
+                        @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+                    </h6>
+                    <h4 class="card-category text-primary">
+
+                        @Html.DisplayFor(modelItem => item.CourseTitle)
+                    </h4>
+                </div>
+                <div class="card-footer ">
+                    <div class="author">
+                        <a href="~/StudeCourse/DownloadFile?filePath=@item.Syllabus"><img src="~/img/images.png" style="width: 15px; height: 15px" title="Download" /></a>
+                        <span> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#DepartmentCode").change(function () {
+            $.get("/StudeCourse/GetCourse", { DepartmentCode: $("#DepartmentCode").val() }, function (data) {
+                $("#CourseCode").empty();
+
+                $.each(data, function (index, row) {
+                    $("#CourseCode").append("<option valus='" + row.CourseCode + "'>" + row.CourseTitle + "</option>")
+
+                });
+            });
+
+
+        })
+    });
+
+</script>

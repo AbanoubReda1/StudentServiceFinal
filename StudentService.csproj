@@ -149,6 +149,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ProjectStdController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
@@ -160,6 +161,7 @@
     <Compile Include="Controllers\SectionsController.cs" />
     <Compile Include="Controllers\StdMaterialsController.cs" />
     <Compile Include="Controllers\StdTaskController.cs" />
+    <Compile Include="Controllers\StudeCourseController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\TasksController.cs" />
@@ -938,6 +940,7 @@
     <Content Include="Models\StudentService.edmx.diagram">
       <DependentUpon>StudentService.edmx</DependentUpon>
     </Content>
+    <Content Include="assets\js\material-dashboard.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1027,9 +1030,18 @@
     <Content Include="Views\Requests\Index.cshtml" />
     <Content Include="Views\StdMaterials\Index.cshtml" />
     <Content Include="Views\StdTask\Index.cshtml" />
+    <Content Include="Views\Courses\Create.cshtml" />
+    <Content Include="Views\Courses\Delete.cshtml" />
+    <Content Include="Views\Courses\Details.cshtml" />
+    <Content Include="Views\Courses\Edit.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
+    <Content Include="Views\ProjectStd\Index.cshtml" />
+    <Content Include="Views\StudeCourse\Index.cshtml" />
+    <Content Include="Views\ProjectStd\All.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

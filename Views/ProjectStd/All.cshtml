@@ -1,0 +1,64 @@
+﻿@model IEnumerable<StudentService.Models.Project>
+
+@{
+    ViewBag.Title = "All";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>All projects </h2>
+<style>
+
+
+
+    .card .card-header.card-header-image {
+        filter: invert(1);
+    }
+
+    .card .card-category {
+    }
+</style>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        @*<tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Abstract)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Professor)
+                </td>
+
+            </tr>*@
+
+        <div class="col-lg-3 col-md-6">
+            <div class="card card-blog">
+                <div class="card-header card-header-image">
+
+                    <img class="img" src="~/img/pdf.png">
+
+                    <div class="colored-shadow" style="background-image: url('/img/pdf.png'); opacity: 1;"></div>
+                </div>
+                <div class="card-body ">
+                    <h6 class="card-category text-primary">
+                        @Html.DisplayFor(modelItem => item.Professor)
+                    </h6>
+                    <h4 class="card-category text-primary">
+                        @Html.DisplayFor(modelItem => item.ProjectName)
+
+                    </h4>
+                </div>
+                <div class="card-footer ">
+                    <div class="author">
+                        <a href="~/ProjectStd/DownloadFile?filePath=@item.Abstract"><img src="~/img/images.png" style="width: 15px; height: 15px" title="Download" /></a>
+                        <span> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+
+</div>
