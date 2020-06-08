@@ -16,7 +16,6 @@ namespace StudentService.Models
 
     public partial class Request
     {
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
@@ -25,5 +24,7 @@ namespace StudentService.Models
         public string CourseName { get; set; }
         public string Type { get; set; }
         public string Description { get; set; }
+    
+    
     }
 }

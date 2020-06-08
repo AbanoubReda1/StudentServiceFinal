@@ -1,0 +1,59 @@
+﻿@model StudentService.Models.Link
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Link</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkUse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkUse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Link1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Link1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkPhoto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkPhoto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LinkID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<StudentService.Models.Link>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <h4 class="card-title ">Link</h4>
+            <p class="card-category"> Mange Link </p>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class=" text-primary">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LinkName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LinkDescription)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LinkUse)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Link1)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Link1)
+
+
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    @foreach (var item in Model)
+                    {
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LinkName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LinkDescription)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LinkUse)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Link1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LinkPhoto)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.LinkID }, new { @class = "btn btn-primary btn-round" }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.LinkID }, new { @class = "btn btn-primary btn-round" }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.LinkID }, new { @class = "btn btn-primary btn-round" })
+                                </td>
+
+</tbody>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

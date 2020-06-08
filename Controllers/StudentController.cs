@@ -23,7 +23,7 @@ namespace StudentService.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Registration([Bind(Exclude = "Verification,ActivationCode")]Student student)
+        public ActionResult Registration([Bind(Exclude = "Verification,ActivationCode")]Models.Student student)
         {
             bool Status = false;
             string Message = " ";

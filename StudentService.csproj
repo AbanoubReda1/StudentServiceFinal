@@ -149,6 +149,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\LinksController.cs" />
     <Compile Include="Controllers\ProjectStdController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="Controllers\MaterialsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\SectionsController.cs" />
+    <Compile Include="Controllers\StdLinksController.cs" />
     <Compile Include="Controllers\StdMaterialsController.cs" />
     <Compile Include="Controllers\StdTaskController.cs" />
     <Compile Include="Controllers\StudeCourseController.cs" />
@@ -183,6 +185,9 @@
     <Compile Include="Models\Extended\Student.cs" />
     <Compile Include="Models\filtr.cs" />
     <Compile Include="Models\Instructor.cs">
+      <DependentUpon>StudentService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Link.cs">
       <DependentUpon>StudentService.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\login.cs" />
@@ -1052,10 +1057,17 @@
     <Content Include="Views\StudentTest\Courses.cshtml" />
     <Content Include="Views\StudentTest\Filter.cshtml" />
     <Content Include="Views\StudentTest\Index1.cshtml" />
+    <Content Include="Views\Links\Create.cshtml" />
+    <Content Include="Views\Links\Delete.cshtml" />
+    <Content Include="Views\Links\Details.cshtml" />
+    <Content Include="Views\Links\Edit.cshtml" />
+    <Content Include="Views\Links\Index.cshtml" />
+    <Content Include="Views\Links\Preview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="uploads\" />
+    <Folder Include="Views\StdLinks\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

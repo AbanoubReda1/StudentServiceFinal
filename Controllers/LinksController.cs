@@ -7,110 +7,117 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using StudentService.Models;
-
+using System.IO;
 namespace StudentService.Controllers
 {
-    public class StudentsController : Controller
+    public class LinksController : Controller
     {
         private StudentServiceEntities db = new StudentServiceEntities();
 
-        // GET: Students
+        // GET: Links
         public ActionResult Index()
         {
-            return View(db.Students.ToList());
+            return View(db.Links.ToList());
+        }
+        public ActionResult Preview()
+        {
+            return View(db.Links.ToList());
         }
 
-        // GET: Students/Details/5
+        // GET: Links/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Models.Student student = db.Students.Find(id);
-            if (student == null)
+            Link link = db.Links.Find(id);
+            if (link == null)
             {
                 return HttpNotFound();
             }
-            return View(student);
+            return View(link);
         }
 
-        // GET: Students/Create
+        // GET: Links/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Students/Create
+        // POST: Links/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StudentID,StudentName,DateOfBirth,Level,Mobile,StudentEmail,Password,ActivationCode,Verification")] Models.Student student)
+        public ActionResult Create(Link link)
         {
             if (ModelState.IsValid)
             {
-                db.Students.Add(student);
+               
+
+
+                db.Links.Add(link);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(student);
+            return View(link);
         }
 
-        // GET: Students/Edit/5
+        // GET: Links/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Models.Student student = db.Students.Find(id);
-            if (student == null)
+            Link link = db.Links.Find(id);
+            if (link == null)
             {
                 return HttpNotFound();
             }
-            return View(student);
+            return View(link);
         }
 
-        // POST: Students/Edit/5
+        // POST: Links/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StudentID,StudentName,DateOfBirth,Level,Mobile,StudentEmail,Password,ActivationCode,Verification")] Models.Student student)
+        public ActionResult Edit([Bind(Include = "LinkID,LinkName,LinkDescription,LinkUse,Link1,LinkPhoto")] Link link)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(student).State = EntityState.Modified;
+                db.Entry(link).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(student);
+            return View(link);
         }
 
-        // GET: Students/Delete/5
+        // GET: Links/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Models.Student student = db.Students.Find(id);
-            if (student == null)
+            Link link = db.Links.Find(id);
+            if (link == null)
             {
                 return HttpNotFound();
             }
-            return View(student);
+            return View(link);
         }
 
-        // POST: Students/Delete/5
+        // POST: Links/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Models.Student student = db.Students.Find(id);
-            db.Students.Remove(student);
+            Link link = db.Links.Find(id);
+            db.Links.Remove(link);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

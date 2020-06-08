@@ -1,0 +1,35 @@
+﻿@model IEnumerable<StudentService.Models.Link>
+@{
+    ViewBag.Title = "Preview";
+     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<center>
+    <h1>Links</h1>
+    <hr />
+</center>
+<br /><br />
+@foreach (var item in Model)
+{
+    <div class="card card-nav-tabs text-center">
+        <div class="card-header card-header-primary">
+
+            <i class="material-icons">language</i>
+            <h2> @Html.DisplayFor(modelItem => item.LinkName)</h2>
+        </div>
+        <div class="card-body">
+
+            <p class="card-text">
+                @Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => item.LinkDescription).ToString()))
+
+            </p>
+            <a href="@Html.DisplayFor(modelItem => item.Link1)" class="btn btn-primary">Go To Official Website</a>
+        </div>
+        <div class="card-footer text-muted">
+            This link can use in :  @Html.DisplayFor(modelItem => item.LinkUse)
+        </div>
+    </div>
+    <br /><br />
+}
+
+

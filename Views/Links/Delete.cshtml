@@ -1,0 +1,65 @@
+﻿@model StudentService.Models.Link
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Link</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkUse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkUse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Link1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Link1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkPhoto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkPhoto)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

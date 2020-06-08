@@ -11,20 +11,16 @@ namespace StudentService.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     using System.Web;
 
-    public partial class Project
+    public partial class Link
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
-
-        public int ProjectID { get; set; }
-        public string ProjectName { get; set; }
-        public string Abstract { get; set; }
-        public string Professor { get; set; }
+        public int LinkID { get; set; }
+        public string LinkName { get; set; }
+        public string LinkDescription { get; set; }
+        public string LinkUse { get; set; }
+        public string Link1 { get; set; }
+        public string LinkPhoto { get; set; }
         public HttpPostedFileBase file { get; set; }
     }
 }

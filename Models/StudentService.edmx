@@ -30,6 +30,17 @@
           <Property Name="InstructorID" Type="int" Nullable="false" />
           <Property Name="InstructorName" Type="nvarchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="LinkID" />
+          </Key>
+          <Property Name="LinkID" Type="int" Nullable="false" />
+          <Property Name="LinkName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LinkDescription" Type="nvarchar(max)" />
+          <Property Name="LinkUse" Type="nvarchar" MaxLength="50" />
+          <Property Name="Link" Type="nvarchar(max)" />
+          <Property Name="LinkPhoto" Type="nchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="Material">
           <Key>
             <PropertyRef Name="MaterialNumber" />
@@ -282,6 +293,7 @@
           <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Instructor" EntityType="Self.Instructor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Links" EntityType="Self.Links" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
@@ -358,6 +370,17 @@
           <Property Name="InstructorID" Type="Int32" Nullable="false" />
           <Property Name="InstructorName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Sections" Relationship="Self.FK_Section_Instructor" FromRole="Instructor" ToRole="Section" />
+        </EntityType>
+        <EntityType Name="Link">
+          <Key>
+            <PropertyRef Name="LinkID" />
+          </Key>
+          <Property Name="LinkID" Type="Int32" Nullable="false" />
+          <Property Name="LinkName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LinkDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LinkUse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Link1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LinkPhoto" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Material">
           <Key>
@@ -623,6 +646,7 @@
           <EntitySet Name="Courses" EntityType="Self.Course" />
           <EntitySet Name="Departments" EntityType="Self.Department" />
           <EntitySet Name="Instructors" EntityType="Self.Instructor" />
+          <EntitySet Name="Links" EntityType="Self.Link" />
           <EntitySet Name="Materials" EntityType="Self.Material" />
           <EntitySet Name="Projects" EntityType="Self.Project" />
           <EntitySet Name="Requests" EntityType="Self.Request" />
@@ -696,6 +720,18 @@
               <MappingFragment StoreEntitySet="Instructor">
                 <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
                 <ScalarProperty Name="InstructorName" ColumnName="InstructorName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Links">
+            <EntityTypeMapping TypeName="StudentServiceModel.Link">
+              <MappingFragment StoreEntitySet="Links">
+                <ScalarProperty Name="LinkID" ColumnName="LinkID" />
+                <ScalarProperty Name="LinkName" ColumnName="LinkName" />
+                <ScalarProperty Name="LinkDescription" ColumnName="LinkDescription" />
+                <ScalarProperty Name="LinkUse" ColumnName="LinkUse" />
+                <ScalarProperty Name="Link1" ColumnName="Link" />
+                <ScalarProperty Name="LinkPhoto" ColumnName="LinkPhoto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
