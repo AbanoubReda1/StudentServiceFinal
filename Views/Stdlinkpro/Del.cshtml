@@ -1,0 +1,50 @@
+﻿@model IEnumerable<StudentService.Models.Link>
+
+@{
+    ViewBag.Title = "Del";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkUse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Link1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkPhoto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkUse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Link1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkPhoto)
+        </td>
+    
+    </tr>
+}
+
+</table>

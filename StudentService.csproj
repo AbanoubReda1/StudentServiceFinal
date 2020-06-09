@@ -160,6 +160,7 @@
     <Compile Include="Controllers\MaterialsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\SectionsController.cs" />
+    <Compile Include="Controllers\StdlinkproController.cs" />
     <Compile Include="Controllers\StdLinksController.cs" />
     <Compile Include="Controllers\StdMaterialsController.cs" />
     <Compile Include="Controllers\StdTaskController.cs" />
@@ -1035,7 +1036,6 @@
     <Content Include="Views\Shared\_StudentLayout.cshtml" />
     <Content Include="Views\Filtr\Courses.cshtml" />
     <Content Include="Views\Filtr\Filter.cshtml" />
-    <Content Include="Views\Shared\test.cshtml" />
     <Content Include="Views\Requests\Create.cshtml" />
     <Content Include="Views\Requests\Index.cshtml" />
     <Content Include="Views\StdMaterials\Index.cshtml" />
@@ -1063,11 +1063,12 @@
     <Content Include="Views\Links\Edit.cshtml" />
     <Content Include="Views\Links\Index.cshtml" />
     <Content Include="Views\Links\Preview.cshtml" />
+    <Content Include="Views\Stdlinkpro\Index.cshtml" />
+    <Content Include="Views\Stdlinkpro\Del.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="uploads\" />
-    <Folder Include="Views\StdLinks\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

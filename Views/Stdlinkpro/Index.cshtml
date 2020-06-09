@@ -1,0 +1,79 @@
+﻿@model IEnumerable<StudentService.Models.Link>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+
+
+
+
+    .card .card-header.card-header-image {
+        filter: invert(1);
+    }
+
+    .card-title {
+        color: #eee;
+        font-size: x-large;
+    }
+</style>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        @*<tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LinkName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LinkDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LinkUse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Link1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LinkPhoto)
+                </td>
+
+            </tr>*@
+        <div class="col-lg-3 col-md-6">
+            <div class="card card-blog">
+                <div class="card-header card-header-image">
+                    <a href="">
+                        <img class="img" src="~/img/pdf.png">
+                    </a>
+                    <div class="colored-shadow" style="background-image: url('/img/pdf.png'); opacity: 1;"></div>
+                </div>
+                <div class="card-body ">
+
+
+                    <h4 class="card-title">
+
+                        <a href="@Url.Action("Del","Stdlinkpro",new { id=item.LinkID})">
+
+                            @Html.DisplayFor(modelItem => item.LinkName)
+                        </a>
+                    </h4>
+                </div>
+                <div class="card-footer ">
+                    <div class="author">
+                        <a href="">
+
+                            <span> </span>
+                        </a>
+                    </div>
+                    <div class="stats ml-auto">
+                        <i class="material-icons">
+                            schedule
+                        </i>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
