@@ -16,6 +16,7 @@ namespace StudentService.Models
     {
         [Display(Name = "Student ID")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Student ID required")]
+        [StringLength(8, ErrorMessage = "Student ID must be 8 characters")]
         [DataType(DataType.Text)]
         public string StudentID { get; set; }
 
@@ -36,7 +37,7 @@ namespace StudentService.Models
 
         [Display(Name = "Level")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Department required")]
-    
+        [Range(1,4, ErrorMessage = "You have reached your maximum limit of characters allowed")]
         public string Level { get; set; }
 
         [Display(Name = "DateOfBirth")]

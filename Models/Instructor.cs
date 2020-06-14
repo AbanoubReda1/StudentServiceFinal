@@ -11,7 +11,9 @@ namespace StudentService.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Instructor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,8 +21,17 @@ namespace StudentService.Models
         {
             this.Sections = new HashSet<Section>();
         }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "InstructorID required")]
     
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "does not match datatype")]
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int InstructorID { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "InstructorName required")]
+        [DataType(DataType.Text, ErrorMessage = "does not match datatype)")]
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "does not match datatype")]
+        [MaxLength(20, ErrorMessage = "InstructorName MaxLength 20  characters")]
         public string InstructorName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

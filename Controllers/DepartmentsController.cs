@@ -50,6 +50,13 @@ namespace StudentService.Controllers
         {
             if (ModelState.IsValid)
             {
+                var isExsist = IsExsist(department.DepartmentCode);
+                if (isExsist)
+                {
+                    ModelState.AddModelError("CodeExist", "DepartmentCode is already Exist");
+
+                    return View(department);
+                }
                 db.Departments.Add(department);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -82,6 +89,8 @@ namespace StudentService.Controllers
         {
             if (ModelState.IsValid)
             {
+                
+
                 db.Entry(department).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -122,6 +131,16 @@ namespace StudentService.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        [NonAction]
+        public bool IsExsist(string DepartmentCode)
+        {
+            using (StudentServiceEntities dc = new StudentServiceEntities())
+            {
+                var v = dc.Departments.Where(a => a.DepartmentCode == DepartmentCode).FirstOrDefault();
+
+                return v != null;
+            }
         }
     }
 }

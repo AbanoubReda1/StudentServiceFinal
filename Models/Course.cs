@@ -11,6 +11,7 @@ namespace StudentService.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Web;
 
     public partial class Course
@@ -20,10 +21,15 @@ namespace StudentService.Models
         {
             this.Sections = new HashSet<Section>();
         }
-    
+        [Required(AllowEmptyStrings = false, ErrorMessage = "DepartmentCode required")]
         public string DepartmentCode { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "CourseCode required")]
+        [MaxLength(7 ,ErrorMessage = "CourseCode ID MaxLength 7 characters")]
         public string CourseCode { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "CourseTitle required")]
+        [MaxLength(20, ErrorMessage = "CourseTitle MaxLength 20 characters")]
         public string CourseTitle { get; set; }
+        [StringLength(1, ErrorMessage = "CrediteHour must be 1 character")]
         public string CrediteHour { get; set; }
         public string Syllabus { get; set; }
         public HttpPostedFileBase file { get; set; }

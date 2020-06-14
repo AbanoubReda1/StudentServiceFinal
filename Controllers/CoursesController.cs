@@ -55,27 +55,37 @@ namespace StudentService.Controllers
             //    db.SaveChanges();
             //    return RedirectToAction("Index");
             //}
-             
+
+            var isExsist = IsExsist(course.CourseCode);
+            if (isExsist)
+            {
+                ModelState.AddModelError("CodeExist", "CourseCode is already Exist");
+
+                return View(course);
+            }
+            var isExsists = IsExsists(course.CourseTitle);
+            if (isExsists)
+            {
+                ModelState.AddModelError("CourseTitle", "CourseTitle is already Exist");
+
+                return View(course);
+            }
+            ViewBag.DepartmentCode = new SelectList(db.Departments, "DepartmentCode", "DepartmentName", course.DepartmentCode);
+
+
             string fileName = Path.GetFileNameWithoutExtension(course.file.FileName);
             string extension = Path.GetExtension(course.file.FileName);
             fileName = fileName + DateTime.Now.ToString("yymmssff") + extension;
             course.Syllabus = "~/uploads/" + fileName;
             fileName = Path.Combine(Server.MapPath("~/uploads/"), fileName);
             course.file.SaveAs(fileName);
-            using(StudentServiceEntities db=new StudentServiceEntities())
-            {
-                db.Courses.Add(course);
-                db.SaveChanges();
-               
+           
 
-            }
-
-            ViewBag.DepartmentCode = new SelectList(db.Departments, "DepartmentCode", "DepartmentName", course.DepartmentCode);
             ModelState.Clear();
 
-           
+
             return View(course);
-            
+
         }
 
         // GET: Courses/Edit/5
@@ -144,6 +154,28 @@ namespace StudentService.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+
+        }
+
+        [NonAction]
+        public bool IsExsist(string CourseCode)
+        {
+            using (StudentServiceEntities dc = new StudentServiceEntities())
+            {
+                var v = dc.Courses.Where(a => a.CourseCode == CourseCode).FirstOrDefault();
+
+                return v != null;
+            }
+        }
+        [NonAction]
+        public bool IsExsists(string CourseTitle)
+        {
+            using (StudentServiceEntities dc = new StudentServiceEntities())
+            {
+                var v = dc.Courses.Where(a => a.CourseTitle == CourseTitle).FirstOrDefault();
+
+                return v != null;
+            }
         }
     }
 }
