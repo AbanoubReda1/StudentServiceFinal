@@ -50,6 +50,14 @@ namespace StudentService.Controllers
         {
             if (ModelState.IsValid)
             {
+                var isExsist = IsExsist(type.TypeID);
+                if (isExsist)
+                {
+                    ModelState.AddModelError("TypeID", "TypeID is already Exist");
+
+                    return View(type);
+                }
+
                 db.Types.Add(type);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -122,6 +130,16 @@ namespace StudentService.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        [NonAction]
+        public bool IsExsist(string id)
+        {
+            using (StudentServiceEntities dc = new StudentServiceEntities())
+            {
+                var v = dc.Types.Where(a => a.TypeID == id).FirstOrDefault();
+
+                return v != null;
+            }
         }
     }
 }

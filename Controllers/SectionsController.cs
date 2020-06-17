@@ -23,13 +23,10 @@ namespace StudentService.Controllers
         }
 
         // GET: Sections/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Section section = db.Sections.Find(id);
+
+            Section section = db.Sections.FirstOrDefault(a=>a.SectionNumber== id);
             if (section == null)
             {
                 return HttpNotFound();
@@ -40,7 +37,8 @@ namespace StudentService.Controllers
         // GET: Sections/Create
         public ActionResult Create()
         {
-            ViewBag.DepartmentCode = new SelectList(db.Departments, "DepartmentCode", "DepartmentCode");
+           
+            ViewBag.DepartmentCode = new SelectList(db.Departments, "DepartmentCode", "DepartmentName");
             ViewBag.CourseCode = new SelectList(db.Courses, "CourseCode", "CourseTitle ");
             ViewBag.InstructorID = new SelectList(db.Instructors, "InstructorID", "InstructorName");
             return View();
@@ -53,13 +51,17 @@ namespace StudentService.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "DepartmentCode,CourseCode,SectionNumber,Semester,Year,InstructorID")] Section section)
         {
+
+           
             if (ModelState.IsValid)
             {
+
+
                 db.Sections.Add(section);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+           
             ViewBag.DepartmentCode = new SelectList(db.Departments, "DepartmentCode", "DepartmentName ", section.DepartmentCode);
             ViewBag.CourseCode = new SelectList(db.Courses, "CourseCode", "CourseTitle ", section.CourseCode);
             ViewBag.InstructorID = new SelectList(db.Instructors, "InstructorID", "InstructorName", section.InstructorID);
@@ -67,19 +69,17 @@ namespace StudentService.Controllers
         }
 
         // GET: Sections/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Section section = db.Sections.Find(id);
+            
+            Section section = db.Sections.FirstOrDefault(a => a.SectionNumber == id);
             if (section == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.DepartmentCode = new SelectList(db.Courses, "DepartmentCode", "CourseTitle", section.DepartmentCode);
-            ViewBag.InstructorID = new SelectList(db.Instructors, "InstructorID", "InstructorName", section.InstructorID);
+            ViewBag.DepartmentCode = new SelectList(db.Departments, "DepartmentCode", "DepartmentName");
+            ViewBag.CourseCode = new SelectList(db.Courses, "CourseCode", "CourseTitle ");
+            ViewBag.InstructorID = new SelectList(db.Instructors, "InstructorID", "InstructorName");
             return View(section);
         }
 
@@ -96,19 +96,17 @@ namespace StudentService.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DepartmentCode = new SelectList(db.Courses, "DepartmentCode", "CourseTitle", section.DepartmentCode);
+
+            ViewBag.DepartmentCode = new SelectList(db.Departments, "DepartmentCode", "DepartmentName ", section.DepartmentCode);
+            ViewBag.CourseCode = new SelectList(db.Courses, "CourseCode", "CourseTitle ", section.CourseCode);
             ViewBag.InstructorID = new SelectList(db.Instructors, "InstructorID", "InstructorName", section.InstructorID);
             return View(section);
         }
 
         // GET: Sections/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Section section = db.Sections.Find(id);
+            Section section = db.Sections.FirstOrDefault(a => a.SectionNumber == id);
             if (section == null)
             {
                 return HttpNotFound();
@@ -119,9 +117,9 @@ namespace StudentService.Controllers
         // POST: Sections/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            Section section = db.Sections.Find(id);
+            Section section = db.Sections.FirstOrDefault(a=>a.SectionNumber==id);
             db.Sections.Remove(section);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -135,5 +133,6 @@ namespace StudentService.Controllers
             }
             base.Dispose(disposing);
         }
+       
     }
 }

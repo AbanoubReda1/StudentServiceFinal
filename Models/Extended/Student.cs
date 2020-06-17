@@ -38,6 +38,7 @@ namespace StudentService.Models
         [Display(Name = "Level")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Department required")]
         [Range(1,4, ErrorMessage = "You have reached your maximum limit of characters allowed")]
+
         public string Level { get; set; }
 
         [Display(Name = "DateOfBirth")]

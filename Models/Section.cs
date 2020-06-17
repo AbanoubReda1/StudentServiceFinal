@@ -11,7 +11,8 @@ namespace StudentService.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Section
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,8 +24,15 @@ namespace StudentService.Models
     
         public string DepartmentCode { get; set; }
         public string CourseCode { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "SectionNumber required")]
         public int SectionNumber { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Semester required")]
+
         public string Semester { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Year required")]
+        [StringLength(4, ErrorMessage = "Year must be 4 character")]
+        [Range(2016, 2020, ErrorMessage = "You have reached your maximum limit of characters allowed (2016 to 2020)")]
+
         public string Year { get; set; }
         public int InstructorID { get; set; }
     

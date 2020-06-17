@@ -11,7 +11,8 @@ namespace StudentService.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Type
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,8 +21,14 @@ namespace StudentService.Models
             this.Tasks = new HashSet<Task>();
             this.Tests = new HashSet<Test>();
         }
-    
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "does not match datatype")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "TypeID required")]
+        [MaxLength(10, ErrorMessage = "TypeID must be 10  characters")]
+
         public string TypeID { get; set; }
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "does not match datatype")]
+        [MaxLength(20, ErrorMessage = "TypeName must be 2  characters")]
+
         public string TypeName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -51,6 +51,9 @@
                                 <div class="col-md-10">
                                     @Html.EditorFor(model => model.SectionNumber, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.SectionNumber, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessage("SectionNumber", new { @class = "text-danger" })
+
+
                                 </div>
                             </div>
 
