@@ -1072,6 +1072,7 @@
     <Content Include="Views\Links\Preview.cshtml" />
     <Content Include="Views\Stdlinkpro\Index.cshtml" />
     <Content Include="Views\Stdlinkpro\Del.cshtml" />
+    <Content Include="Views\Filtr\mat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

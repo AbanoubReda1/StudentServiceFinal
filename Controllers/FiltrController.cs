@@ -69,8 +69,23 @@ namespace StudentService.Views
             return View(task);
 
         }
-   
-    public ActionResult pol(string id,string id2)
+        public ActionResult mat(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var course = db.Materials.Where(a => a.CourseCode == id);
+
+            var task = db.Materials.Where(a => a.CourseCode == id).ToList();
+            if (task == null)
+            {
+                return HttpNotFound();
+            }
+            return View(task);
+
+        }
+        public ActionResult pol(string id,string id2)
         {  
             if (id == null)
             {

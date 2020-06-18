@@ -20,7 +20,7 @@ namespace StudentService.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
-
+      
         public int TaskNumber { get; set; }
         public string DepartmentCode { get; set; }
         public string CourseCode { get; set; }

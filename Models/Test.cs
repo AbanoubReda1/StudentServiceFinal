@@ -11,9 +11,11 @@ namespace StudentService.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Test
     {
+      
         public int QuestionId { get; set; }
         public string DepartmentCode { get; set; }
         public string CourseCode { get; set; }

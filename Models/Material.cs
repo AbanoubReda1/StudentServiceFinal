@@ -17,8 +17,7 @@ namespace StudentService.Models
 
     public partial class Material
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       
 
 
         public int MaterialNumber { get; set; }
