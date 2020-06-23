@@ -899,18 +899,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="img\aa.jpg" />
     <Content Include="img\ASS.png" />
-    <Content Include="img\bg.jpg" />
-    <Content Include="img\circle_close_delete_-128.png" />
     <Content Include="img\final.jpg" />
     <Content Include="img\Fmid.png" />
     <Content Include="img\images.png" />
-    <Content Include="img\login-w-icon.png" />
-    <Content Include="img\mat.jpg" />
     <Content Include="img\Mid.png" />
     <Content Include="img\pdf.png" />
-    <Content Include="img\pp.png" />
     <Content Include="img\qu.jpg" />
     <Content Include="img\sidebar-1.jpg" />
     <Content Include="img\sidebar-2.jpg" />
@@ -926,13 +920,6 @@
       <DependentUpon>StudentService.edmx</DependentUpon>
       <LastGenOutput>StudentService.cs</LastGenOutput>
     </Content>
-    <Content Include="Registration\1.1.png" />
-    <Content Include="Registration\1.2.png" />
-    <Content Include="Registration\1.3.png" />
-    <Content Include="Registration\1.4.png" />
-    <Content Include="Registration\1.5.png" />
-    <Content Include="Registration\1.6.png" />
-    <Content Include="Registration\All invalid.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\css\material-kit.css.map" />
@@ -1073,6 +1060,7 @@
     <Content Include="Views\Stdlinkpro\Index.cshtml" />
     <Content Include="Views\Stdlinkpro\Del.cshtml" />
     <Content Include="Views\Filtr\mat.cshtml" />
+    <Content Include="Views\Home\pop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

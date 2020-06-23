@@ -14,6 +14,10 @@ namespace StudentService.Controllers
         {
             return View();
         }
+        public ActionResult pop()
+        {
+            return View();
+        }
 
         public ActionResult About()
         {
