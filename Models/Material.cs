@@ -17,16 +17,19 @@ namespace StudentService.Models
 
     public partial class Material
     {
-       
 
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Material Number required")]
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "does not match datatype")]
         public int MaterialNumber { get; set; }
         public string DepartmentCode { get; set; }
         public string CourseCode { get; set; }
         public Nullable<int> SectionNumber { get; set; }
         public string Semester { get; set; }
         public string Year { get; set; }
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "does not match datatype")]
         public Nullable<int> LectureNumber { get; set; }
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "does not match datatype")]
         public string LectureName { get; set; }
         public string PDF { get; set; }
     

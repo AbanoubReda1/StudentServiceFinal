@@ -57,13 +57,13 @@
                                     @Html.DisplayFor(modelItem => item.Department.DepartmentName)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.CourseCode }, new { @class = "btn btn-primary btn-round" }) 
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.CourseCode.Trim() }, new { @class = "btn btn-primary btn-round" }) 
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Details", "Details", new { id = item.CourseCode }, new { @class = "btn btn-primary btn-round" }) 
+                                    @Html.ActionLink("Details", "Details", new { id = item.CourseCode.Trim() }, new { @class = "btn btn-primary btn-round" }) 
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseCode }, new { @class = "btn btn-primary btn-round" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseCode.Trim() }, new { @class = "btn btn-primary btn-round" })
                                 </td>
 
 </tbody>

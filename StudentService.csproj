@@ -151,6 +151,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\LinksController.cs" />
     <Compile Include="Controllers\ProjectStdController.cs" />
+    <Compile Include="Controllers\RequestsAdminController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
@@ -674,29 +675,12 @@
     <Content Include="assets\img\cover.jpg" />
     <Content Include="assets\img\CS.jpg" />
     <Content Include="assets\img\dm.jpg" />
-    <Content Include="assets\img\examples\clem-onojegaw.jpg" />
-    <Content Include="assets\img\examples\clem-onojeghuo.jpg" />
-    <Content Include="assets\img\examples\cynthia-del-rio.jpg" />
-    <Content Include="assets\img\examples\mariya-georgieva.jpg" />
-    <Content Include="assets\img\examples\olu-eletu.jpg" />
-    <Content Include="assets\img\examples\studio-1.jpg" />
-    <Content Include="assets\img\examples\studio-2.jpg" />
-    <Content Include="assets\img\examples\studio-3.jpg" />
-    <Content Include="assets\img\examples\studio-4.jpg" />
-    <Content Include="assets\img\examples\studio-5.jpg" />
-    <Content Include="assets\img\faces\avatar.jpg" />
-    <Content Include="assets\img\faces\card-profile1-square.jpg" />
-    <Content Include="assets\img\faces\card-profile2-square.jpg" />
-    <Content Include="assets\img\faces\marc.jpg" />
     <Content Include="assets\img\favicon.png" />
-    <Content Include="assets\img\g.png" />
     <Content Include="assets\img\Is.jpg" />
     <Content Include="assets\img\landing.jpg" />
     <Content Include="assets\img\mask.png" />
     <Content Include="assets\img\new_logo.png" />
-    <Content Include="assets\img\profile.jpg" />
     <Content Include="assets\img\profile_city.jpg" />
-    <Content Include="assets\img\responsive-nav.gif" />
     <Content Include="assets\img\sidebar-1.jpg" />
     <Content Include="assets\img\sidebar-2.jpg" />
     <Content Include="assets\img\sidebar-3.jpg" />
@@ -902,6 +886,7 @@
     <Content Include="img\ASS.png" />
     <Content Include="img\final.jpg" />
     <Content Include="img\Fmid.png" />
+    <Content Include="img\g.png" />
     <Content Include="img\images.png" />
     <Content Include="img\Mid.png" />
     <Content Include="img\pdf.png" />
@@ -946,6 +931,7 @@
     <Content Include="Models\StudentService.edmx.diagram">
       <DependentUpon>StudentService.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\StudentServiceFue - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1061,10 +1047,14 @@
     <Content Include="Views\Stdlinkpro\Del.cshtml" />
     <Content Include="Views\Filtr\mat.cshtml" />
     <Content Include="Views\Home\pop.cshtml" />
+    <Content Include="Views\RequestsAdmin\Create.cshtml" />
+    <Content Include="Views\RequestsAdmin\Delete.cshtml" />
+    <Content Include="Views\RequestsAdmin\Details.cshtml" />
+    <Content Include="Views\RequestsAdmin\Edit.cshtml" />
+    <Content Include="Views\RequestsAdmin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

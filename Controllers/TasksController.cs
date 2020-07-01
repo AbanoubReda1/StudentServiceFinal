@@ -55,8 +55,11 @@ namespace StudentService.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "TaskNumber,DepartmentCode,CourseCode,SectionNumber,Semester,Year,TaskHeader,TaskDetails,Type")] Task task)
         {
+
             if (ModelState.IsValid)
             {
+               
+
                 db.Tasks.Add(task);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -141,5 +144,6 @@ namespace StudentService.Controllers
             }
             base.Dispose(disposing);
         }
+     
     }
 }

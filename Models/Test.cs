@@ -15,15 +15,22 @@ namespace StudentService.Models
 
     public partial class Test
     {
-      
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Question Id required")]
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "does not match datatype")]
         public int QuestionId { get; set; }
         public string DepartmentCode { get; set; }
         public string CourseCode { get; set; }
         public Nullable<int> SectionNumber { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Question Id required")]
         public string Question { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Option1 required")]
         public string Option1 { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Option2 required")]
+
         public string Option2 { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Option3 required")]
         public string Option3 { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Option4 required")]
         public string Option4 { get; set; }
         public string Type { get; set; }
     

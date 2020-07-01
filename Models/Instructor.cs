@@ -22,11 +22,10 @@ namespace StudentService.Models
             this.Sections = new HashSet<Section>();
         }
         [Required(AllowEmptyStrings = false, ErrorMessage = "InstructorID required")]
-    
+
+
         [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "does not match datatype")]
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int InstructorID { get; set; }
         [Required(AllowEmptyStrings = false, ErrorMessage = "InstructorName required")]
         [DataType(DataType.Text, ErrorMessage = "does not match datatype)")]

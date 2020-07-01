@@ -26,7 +26,7 @@ namespace StudentService.Controllers
         public ActionResult Details(int id)
         {
 
-            Section section = db.Sections.FirstOrDefault(a=>a.SectionNumber== id);
+            Section section = db.Sections.FirstOrDefault(a => a.SectionNumber == id);
             if (section == null)
             {
                 return HttpNotFound();
@@ -119,7 +119,7 @@ namespace StudentService.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Section section = db.Sections.FirstOrDefault(a=>a.SectionNumber==id);
+            Section section = db.Sections.FirstOrDefault(a => a.SectionNumber == id);
             db.Sections.Remove(section);
             db.SaveChanges();
             return RedirectToAction("Index");

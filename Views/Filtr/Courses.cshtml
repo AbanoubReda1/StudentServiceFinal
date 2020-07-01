@@ -20,7 +20,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card card-blog">
                     <div class="card-header card-header-image">
-                        <a href="#pablo">
+                        <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">
                             <img class="img" src="~/assets/img/CS.jpg">
                         </a>
                         <div class="colored-shadow" style="background-image: url(/assets/img/CS.jpg); opacity: 1;"></div>
@@ -32,7 +32,7 @@
                         <h4 class="card-title">
                          
 
-                            <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode})">
+                            <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">
 
                                 @Html.DisplayFor(modelItem => item.CourseTitle)
                             </a>
@@ -62,7 +62,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card card-blog">
                     <div class="card-header card-header-image">
-                        <a href="#pablo">
+                        <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">
                             <img class="img" src="~/assets/img/dm.jpg">
                         </a>
                         <div class="colored-shadow" style="background-image: url(/assets/img/dm.jpg); opacity: 1;"></div>
@@ -72,12 +72,12 @@
                             <i class="material-icons">Course</i> @Html.DisplayFor(modelItem => item.CourseCode)
                         </h6>
                         <h4 class="card-title">
-                            <a href="#pablo">@Html.DisplayFor(modelItem => item.CourseTitle)</a>
+                            <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">@Html.DisplayFor(modelItem => item.CourseTitle)</a>
                         </h4>
                     </div>
                     <div class="card-footer ">
                         <div class="author">
-                            <a href="#pablo">
+                            <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim().Trim()})">
 
                                 <span> @Html.DisplayFor(modelItem => item.Department.DepartmentName)</span>
                             </a>
@@ -97,7 +97,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card card-blog">
                     <div class="card-header card-header-image">
-                        <a href="#pablo">
+                        <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">
                             <img class="img" src="~/assets/img/g.jpg">
                         </a>
                         <div class="colored-shadow" style="background-image: url(/assets/img/g.png); opacity: 1;"></div>
@@ -107,12 +107,12 @@
                             <i class="material-icons">Course</i> @Html.DisplayFor(modelItem => item.CourseCode)
                         </h6>
                         <h4 class="card-title">
-                            <a href="#pablo">@Html.DisplayFor(modelItem => item.CourseTitle)</a>
+                            <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">@Html.DisplayFor(modelItem => item.CourseTitle)</a>
                         </h4>
                     </div>
                     <div class="card-footer ">
                         <div class="author">
-                            <a href="#pablo">
+                            <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">
 
                                 <span> @Html.DisplayFor(modelItem => item.Department.DepartmentName)</span>
                             </a>
@@ -132,7 +132,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card card-blog">
                     <div class="card-header card-header-image">
-                        <a href="#pablo">
+                        <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">
                             <img class="img" src="~/assets/img/Is.jpg">
                         </a>
                         <div class="colored-shadow" style="background-image: url(/assets/img/Is.jpg); opacity: 1;"></div>
@@ -142,12 +142,12 @@
                             <i class="material-icons">Course</i> @Html.DisplayFor(modelItem => item.CourseCode)
                         </h6>
                         <h4 class="card-title">
-                            <a href="#pablo">@Html.DisplayFor(modelItem => item.CourseTitle)</a>
+                            <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">@Html.DisplayFor(modelItem => item.CourseTitle)</a>
                         </h4>
                     </div>
                     <div class="card-footer ">
                         <div class="author">
-                            <a href="#pablo">
+                            <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">
 
                                 <span> @Html.DisplayFor(modelItem => item.Department.DepartmentName)</span>
                             </a>

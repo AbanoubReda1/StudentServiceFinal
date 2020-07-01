@@ -209,9 +209,9 @@ namespace StudentService.Controllers
 
             var verifyURL = "/Student/VerifyAccount/" + ActivationCode;
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyURL);
-            var fromEmail = new MailAddress("abanoubreda68@outlook.com", "Dotnet Awesome");
+            var fromEmail = new MailAddress("studentservicefue@gmail.com", "Dotnet Awesome");
             var toEmail = new MailAddress(StudentEmail);
-            var fromEmailPassword = "popo01282528521";
+            var fromEmailPassword = "Std12345";
             string sbject = "Your account is Successfully Created";
             string body = "<br/><br/>We are excited to tell you that your Dotnet Awesome account is" +
           " successfully created. Please click on the below link to verify your account" +
@@ -219,7 +219,7 @@ namespace StudentService.Controllers
 
             SmtpClient smtp = new SmtpClient
             {
-            Host = "smtp.outlook.com",
+            Host = "smtp.gmail.com",
             Port = 587,
             EnableSsl = true,
             DeliveryMethod = SmtpDeliveryMethod.Network,

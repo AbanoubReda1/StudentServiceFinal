@@ -21,7 +21,7 @@ namespace StudentService.Models
         {
             this.Sections = new HashSet<Section>();
         }
-        [Required(AllowEmptyStrings = false, ErrorMessage = "DepartmentCode required")]
+     
         public string DepartmentCode { get; set; }
         [Required(AllowEmptyStrings = false, ErrorMessage = "CourseCode required")]
         [MaxLength(7 ,ErrorMessage = "CourseCode ID MaxLength 7 characters")]

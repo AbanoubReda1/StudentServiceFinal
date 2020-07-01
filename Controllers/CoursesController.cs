@@ -148,25 +148,6 @@ namespace StudentService.Controllers
 
         }
 
-        [NonAction]
-        public bool IsExsist(string CourseCode)
-        {
-            using (StudentServiceEntities dc = new StudentServiceEntities())
-            {
-                var v = dc.Courses.Where(a => a.CourseCode == CourseCode).FirstOrDefault();
-
-                return v != null;
-            }
-        }
-        [NonAction]
-        public bool IsExsists(string CourseTitle)
-        {
-            using (StudentServiceEntities dc = new StudentServiceEntities())
-            {
-                var v = dc.Courses.Where(a => a.CourseTitle == CourseTitle).FirstOrDefault();
-
-                return v != null;
-            }
-        }
+        
     }
 }

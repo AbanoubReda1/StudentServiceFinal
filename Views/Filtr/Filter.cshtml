@@ -29,7 +29,7 @@
         <div class="col-lg-3 col-md-6">
             <div class="card card-blog">
                 <div class="card-header card-header-image">
-                    <a href="@Url.Action("mat","Filtr",new { id=item.CourseCode})">
+                    <a href="@Url.Action("mat","Filtr",new { id=item.CourseCode.Trim()})">
                         <img class="img" src="~/img/logo.png">
                     </a>
                     <div class="colored-shadow" style="background-image: url('/img/logo.png'); opacity: 1;"></div>
@@ -38,7 +38,7 @@
                     
                    
                     <h4 class="card-title">
-                        <a href="@Url.Action("mat","Filtr",new { id=item.CourseCode})">Materials
+                        <a href="@Url.Action("mat","Filtr",new { id=item.CourseCode.Trim()})">Materials
                         </a>
                     </h4>
                 </div>
@@ -62,7 +62,7 @@
         <div class="col-lg-3 col-md-6">
             <div class="card card-blog">
                 <div class="card-header card-header-image">
-                    <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode,id2="F"})">
+                    <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="F"})">
                         <img class="img" src="~/img/Mid.png">
                     </a>
                     <div class="colored-shadow" style="background-image: url(/img/Mid.png); opacity: 1;"></div>
@@ -70,7 +70,7 @@
                 <div class="card-body ">
                    
                     <h4 class="card-title">
-                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode,id2="2nd-mid"})"> Second Midterm
+                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="2nd-mid"})"> Second Midterm
                         </a>
                     </h4>
                 </div>
@@ -98,7 +98,7 @@
                 <div class="card-body ">
                     
                     <h4 class="card-title">
-                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode,id2="ASGMT"})">Assignment</a>
+                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="ASGMT"})">Assignment</a>
                     </h4>
                 </div>
                 <div class="card-footer ">
@@ -144,7 +144,7 @@
                 <div class="card-body ">
                     
                     <h4 class="card-title">
-                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode,id2="1st-mid"})">Firt-Midterm</a>
+                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="1st-mid"})">Firt-Midterm</a>
                     </h4>
                 </div>
                 <div class="card-footer ">
@@ -163,7 +163,7 @@
         <div class="col-lg-3 col-md-6">
             <div class="card card-blog">
                 <div class="card-header card-header-image">
-                    <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode,id2="F"})">
+                    <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="F"})">
                         <img class="img" src="~/img/final.jpg">
                     </a>
                     <div class="colored-shadow" style="background-image: url(/img/final.jpg); opacity: 1;"></div>
@@ -171,7 +171,7 @@
                 <div class="card-body ">
                     
                     <h4 class="card-title">
-                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode,id2="F"})">Final
+                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="F"})">Final
                         </a>
                     </h4>
                 </div>
@@ -199,7 +199,7 @@
                 <div class="card-body ">
                    
                     <h4 class="card-title">
-                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode,id2="Q"})">QUIZ</a>
+                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="Q"})">QUIZ</a>
                     </h4>
                 </div>
                 <div class="card-footer ">
