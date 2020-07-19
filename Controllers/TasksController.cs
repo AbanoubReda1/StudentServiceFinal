@@ -94,10 +94,10 @@ namespace StudentService.Controllers
             return View(task);
         }
 
-   
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TaskNumber,DepartmentCode,CourseCode,SectionNumber,Semester,Year,TaskHeader,TaskDetails,Type")] Task task)
+        public ActionResult Edit(Task task)
         {
             if (ModelState.IsValid)
             {
@@ -105,12 +105,16 @@ namespace StudentService.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DepartmentCode = new SelectList(db.Sections, "DepartmentCode", "DepartmentCode", task.DepartmentCode);
-            ViewBag.Type = new SelectList(db.Types, "TypeID", "TypeName", task.Type);
+            ViewBag.DepartmentCode = new SelectList(db.Departments, "DepartmentCode", "DepartmentCode", task.DepartmentCode);
+            ViewBag.CourseCode = new SelectList(db.Sections, "CourseCode", "CourseCode", task.CourseCode);
+            ViewBag.SectionNumber = new SelectList(db.Sections, "SectionNumber", "SectionNumber", task.SectionNumber);
+            ViewBag.Semester = new SelectList(db.Sections, "Semester", "Semester", task.Semester);
+            ViewBag.Year = new SelectList(db.Sections, "Year", "Year", task.Year);
+            ViewBag.Type = new SelectList(db.Types, "TypeID", "TypeID", task.Type);
             return View(task);
         }
 
-        // GET: Tasks/Delete/5
+
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -125,7 +129,6 @@ namespace StudentService.Controllers
             return View(task);
         }
 
-        // POST: Tasks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

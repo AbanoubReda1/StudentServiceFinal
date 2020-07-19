@@ -26,8 +26,8 @@
                         <div class="colored-shadow" style="background-image: url(/assets/img/CS.jpg); opacity: 1;"></div>
                     </div>
                     <div class="card-body ">
-                        <h6 class="card-category text-danger">
-                            <i class="material-icons">Course</i> @Html.DisplayFor(modelItem => item.CourseCode)
+                                               <h6 class="card-category text-primary">
+                         @Html.DisplayFor(modelItem => item.CourseCode)
                         </h6>
                         <h4 class="card-title">
                          
@@ -68,8 +68,8 @@
                         <div class="colored-shadow" style="background-image: url(/assets/img/dm.jpg); opacity: 1;"></div>
                     </div>
                     <div class="card-body ">
-                        <h6 class="card-category text-danger">
-                            <i class="material-icons">Course</i> @Html.DisplayFor(modelItem => item.CourseCode)
+                                               <h6 class="card-category text-primary">
+                            @Html.DisplayFor(modelItem => item.CourseCode)
                         </h6>
                         <h4 class="card-title">
                             <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">@Html.DisplayFor(modelItem => item.CourseTitle)</a>
@@ -98,13 +98,13 @@
                 <div class="card card-blog">
                     <div class="card-header card-header-image">
                         <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">
-                            <img class="img" src="~/assets/img/g.jpg">
+                            <img class="img" src="~/img/logo1.png">
                         </a>
-                        <div class="colored-shadow" style="background-image: url(/assets/img/g.png); opacity: 1;"></div>
+                        <div class="colored-shadow" style="background-image: url(~/img/logo1.png); opacity: 1;"></div>
                     </div>
                     <div class="card-body ">
-                        <h6 class="card-category text-danger">
-                            <i class="material-icons">Course</i> @Html.DisplayFor(modelItem => item.CourseCode)
+                                               <h6 class="card-category text-primary">
+                           @Html.DisplayFor(modelItem => item.CourseCode)
                         </h6>
                         <h4 class="card-title">
                             <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">@Html.DisplayFor(modelItem => item.CourseTitle)</a>
@@ -138,8 +138,8 @@
                         <div class="colored-shadow" style="background-image: url(/assets/img/Is.jpg); opacity: 1;"></div>
                     </div>
                     <div class="card-body ">
-                        <h6 class="card-category text-danger">
-                            <i class="material-icons">Course</i> @Html.DisplayFor(modelItem => item.CourseCode)
+                                               <h6 class="card-category text-primary">
+                          @Html.DisplayFor(modelItem => item.CourseCode)
                         </h6>
                         <h4 class="card-title">
                             <a href="@Url.Action("Filter","Filtr",new { id=item.CourseCode.Trim()})">@Html.DisplayFor(modelItem => item.CourseTitle)</a>

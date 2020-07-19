@@ -16,7 +16,7 @@ namespace StudentService.Models
     public partial class Test
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "Question Id required")]
-        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "does not match datatype")]
+       
         public int QuestionId { get; set; }
         public string DepartmentCode { get; set; }
         public string CourseCode { get; set; }

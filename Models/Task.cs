@@ -18,7 +18,7 @@ namespace StudentService.Models
     public partial class Task
     {
 
-        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "does not match datatype")]
+       
         [Required(AllowEmptyStrings = false, ErrorMessage = "Task Number required")]
         public int TaskNumber { get; set; }
         public string DepartmentCode { get; set; }
@@ -26,7 +26,7 @@ namespace StudentService.Models
         public Nullable<int> SectionNumber { get; set; }
         public string Semester { get; set; }
         public string Year { get; set; }
-        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "does not match datatype")]
+        
         public string TaskHeader { get; set; }
         [AllowHtml]
         [Required(AllowEmptyStrings = false, ErrorMessage = "TaskDetails required")]
