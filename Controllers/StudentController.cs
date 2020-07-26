@@ -8,11 +8,57 @@ using System.Data;
 using System.Net.Mail;
 using System.Net;
 using System.Web.Security;
+using System.Data.Entity;
+using Microsoft.AspNet.Identity;
 
 namespace StudentService.Controllers
 {
     public class StudentController : Controller
     {
+        StudentServiceEntities db = new StudentServiceEntities();
+        public ActionResult Edit()
+        {
+            string username = User.Identity.Name;
+
+            // Fetch the userprofile
+            Models.Student user = db.Students.FirstOrDefault(u => u.StudentEmail.Equals(username));
+
+            // Construct the viewmodel
+            Models.Student model = new Models.Student();
+            model.StudentName = user.StudentName;
+            model.Level = user.Level;
+            model.DateOfBirth = user.DateOfBirth;
+            model.Mobile = user.Mobile;
+            model.StudentEmail = user.StudentEmail;
+            model.Password = user.Password;
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Edit(Models.Student userprofile)
+        {
+            if (ModelState.IsValid)
+            {
+                string username = User.Identity.Name;
+                // Get the userprofile
+                Models.Student user = db.Students.FirstOrDefault(u => u.StudentEmail.Equals(username));
+
+                // Update fields
+                user.StudentName = userprofile.StudentName;
+                user.Level = userprofile.Level;
+                user.Mobile = userprofile.Mobile;
+                user.DateOfBirth = userprofile.DateOfBirth;
+
+                user.StudentEmail = userprofile.StudentEmail;
+                user.Password = userprofile.Password;
+                db.Entry(user).State = EntityState.Modified;
+
+                db.SaveChanges();
+
+                return RedirectToAction("Index", "Home"); // or whatever
+            }
+
+            return View(userprofile);
+        }
         // GET: Student
         [HttpGet]
 

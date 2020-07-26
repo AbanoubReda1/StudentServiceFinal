@@ -235,9 +235,10 @@ else
                                             <div class="col">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="material-icons">
-                                                            perm_identity
-                                                        </span>
+                                                        <span class="input-group-text">
+                                                            <i class="material-icons">  perm_identity</i>
+                                                              
+                                                            </span>
                                                     </div>
 
                                                     @Html.EditorFor(model => model.StudentID, new { htmlAttributes = new { @class = "form-control", placeholder = "FUE ID..." } })
@@ -267,9 +268,11 @@ else
                                                 </div>
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="material-icons">
-                                                            format_list_numbered
-                                                        </span>
+                                                        <span class="input-group-text">
+                                                            <i class="material-icons">
+                                                                format_list_numbered
+                                                            </i>
+                                                            </span>
                                                     </div>
 
                                                     @Html.EditorFor(model => model.Level, new { htmlAttributes = new { @class = "form-control", placeholder = "Level..." } })
@@ -280,9 +283,11 @@ else
 
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="material-icons">
-                                                            today
-                                                        </span>
+                                                        <span class="input-group-text">
+                                                            <i class="material-icons">
+                                                                today
+                                                            </i>
+                                                            </span>
                                                     </div>
 
                                                     @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control", placeholder = "DateOfBirth" } })
@@ -292,9 +297,12 @@ else
 
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="material-icons">
-                                                            call
-                                                        </span>
+                                                        <span class="input-group-text">
+                                                            <i class="material-icons">
+
+                                                                call
+                                                            </i>
+                                                            </span>
                                                     </div>
 
                                                     @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control", placeholder = "phone Number" } })
@@ -302,9 +310,12 @@ else
                                                 </div>
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="material-icons">
-                                                            lock
-                                                        </span>
+                                                        <span class="input-group-text">
+                                                            <i class="material-icons">
+                                                                lock
+                                                            </i>
+                                                            </span>
+
                                                     </div>
 
                                                     @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
@@ -312,9 +323,11 @@ else
                                                 </div>
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="material-icons">
-                                                            lock
-                                                        </span>
+                                                        <span class="input-group-text">
+                                                            <i class="material-icons">
+                                                                lock
+                                                            </i>
+                                                            </span>
                                                     </div>
                                                     @Html.EditorFor(model => model.ConfiremPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "ConfiremPassword" } })
                                                     @Html.ValidationMessageFor(model => model.ConfiremPassword, "", new { @class = "text-danger" })

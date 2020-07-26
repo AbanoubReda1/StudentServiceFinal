@@ -32,6 +32,7 @@ namespace StudentService.Models
         public string Mobile { get; set; }
         [Display(Name = "E-Mail Address")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "E-Mail Address required")]
+        [StringLength(19, ErrorMessage = "only FUE Mail Alloweds")]
         [DataType(DataType.EmailAddress)]
         public string StudentEmail { get; set; }
 

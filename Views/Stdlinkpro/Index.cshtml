@@ -52,9 +52,15 @@
 
                     <h4 class="card-title">
 
-                        <a href="@Url.Action("Del","Stdlinkpro",new { id=item.LinkID})">
+                        <a>
 
                             @Html.DisplayFor(modelItem => item.LinkName)
+
+                        </a>
+                        <a>
+
+                            @Html.DisplayFor(modelItem => item.Link1)
+
                         </a>
                     </h4>
                 </div>

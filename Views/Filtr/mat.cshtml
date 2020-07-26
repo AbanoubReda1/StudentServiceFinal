@@ -14,7 +14,9 @@
                 <style>
 
 
-
+                    .card-category .h6 {
+                        text-transform: none;
+                    }
 
                     .card .card-header.card-header-image {
                         filter: invert(1);
@@ -36,7 +38,7 @@
                         </div>
                         <div class="card-body ">
                             <h6 class="card-category text-primary">
-                                @Html.DisplayFor(modelItem => item.LectureNumber)
+                           Lecture Number:  @Html.DisplayFor(modelItem => item.LectureNumber)
                             </h6>
                             <h4 class="card-category text-primary">
                                 @Html.DisplayFor(modelItem => item.LectureName)
@@ -45,7 +47,7 @@
                         </div>
                         <div class="card-footer ">
                             <div class="author">
-                                <a href="~/StudeCourse/DownloadFile?filePath=@item.PDF"><img src="~/img/images.png" style="width: 15px; height: 15px" title="Download" /></a>
+                           Download     <a href="~/StudeCourse/DownloadFile?filePath=@item.PDF"><img src="~/img/images.png" style="width: 15px; height: 15px" title="Download" /></a>
                                 <span> </span>
                             </div>
                         </div>

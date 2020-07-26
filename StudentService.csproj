@@ -1053,6 +1053,7 @@
     <Content Include="Views\RequestsAdmin\Details.cshtml" />
     <Content Include="Views\RequestsAdmin\Edit.cshtml" />
     <Content Include="Views\RequestsAdmin\Index.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

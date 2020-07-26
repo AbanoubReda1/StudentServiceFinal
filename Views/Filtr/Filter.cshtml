@@ -11,7 +11,7 @@
     <style>
 
 
-
+        
 
         .card .card-header.card-header-image {
             filter: invert(1);
@@ -35,25 +35,29 @@
                     <div class="colored-shadow" style="background-image: url('/img/logo.png'); opacity: 1;"></div>
                 </div>
                 <div class="card-body ">
-                    
-                   
+
+
                     <h4 class="card-title">
-                        <a href="@Url.Action("mat","Filtr",new { id=item.CourseCode.Trim()})">Materials
+                        <a href="@Url.Action("mat","Filtr",new { id=item.CourseCode.Trim()})">
+                            Materials
                         </a>
                     </h4>
+                    <hr />
+                    <h5 class="card-contact">
+                       DR/ @Html.DisplayFor(Model => item.Instructor.InstructorName)
+                    </h5>
                 </div>
+               
                 <div class="card-footer ">
                     <div class="author">
-                        <a href="">
-
-                            <span> </span>
-                        </a>
+                        @Html.DisplayFor(Model => item.Semester)-@Html.DisplayFor(Model => item.Year)
                     </div>
+
                     <div class="stats ml-auto">
                         <i class="material-icons">
                             schedule
                         </i>
-
+                        CrediteHour-3
                     </div>
                 </div>
             </div>
@@ -68,21 +72,27 @@
                     <div class="colored-shadow" style="background-image: url(/img/Mid.png); opacity: 1;"></div>
                 </div>
                 <div class="card-body ">
-                   
+
                     <h4 class="card-title">
-                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="2nd-mid"})"> Second Midterm
+                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="2nd-mid"})">
+                            Second Midterm
                         </a>
                     </h4>
+                    <hr />
+                    <h5 class="card-contact">
+                        DR/ @Html.DisplayFor(Model => item.Instructor.InstructorName)
+                    </h5>
                 </div>
                 <div class="card-footer ">
                     <div class="author">
-                        <a href="">
-
-                            <span> </span>
-                        </a>
+                        @Html.DisplayFor(Model => item.Semester)-@Html.DisplayFor(Model => item.Year)
                     </div>
-                    <div class="stats ml-auto">
 
+                    <div class="stats ml-auto">
+                        <i class="material-icons">
+                            schedule
+                        </i>
+                        CrediteHour-3
                     </div>
                 </div>
             </div>
@@ -96,20 +106,25 @@
                     <div class="colored-shadow" style="background-image: url(/img/ASS.png); opacity: 1;"></div>
                 </div>
                 <div class="card-body ">
-                    
+
                     <h4 class="card-title">
                         <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="ASGMT"})">Assignment</a>
                     </h4>
+                    <hr />
+                    <h5 class="card-contact">
+                        DR/ @Html.DisplayFor(Model => item.Instructor.InstructorName)
+                    </h5>
                 </div>
                 <div class="card-footer ">
                     <div class="author">
-                        <a href="">
-
-                            <span> </span>
-                        </a>
+                        @Html.DisplayFor(Model => item.Semester)-@Html.DisplayFor(Model => item.Year)
                     </div>
+
                     <div class="stats ml-auto">
-                        <i class="material-icons">schedule</i>
+                        <i class="material-icons">
+                            schedule
+                        </i>
+                        CrediteHour-3
                     </div>
                 </div>
             </div>
@@ -142,20 +157,25 @@
                     <div class="colored-shadow" style="background-image: url(/img/Fmid.png); opacity: 1;"></div>
                 </div>
                 <div class="card-body ">
-                    
+
                     <h4 class="card-title">
                         <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="1st-mid"})">Firt-Midterm</a>
                     </h4>
+                    <hr />
+                    <h5 class="card-contact">
+                        DR/ @Html.DisplayFor(Model => item.Instructor.InstructorName)
+                    </h5>
                 </div>
                 <div class="card-footer ">
                     <div class="author">
-                        <a href="">
-
-                            <span> </span>
-                        </a>
+                        @Html.DisplayFor(Model => item.Semester)-@Html.DisplayFor(Model => item.Year)
                     </div>
+
                     <div class="stats ml-auto">
-                        <i class="material-icons">schedule</i>
+                        <i class="material-icons">
+                            schedule
+                        </i>
+                        CrediteHour-3
                     </div>
                 </div>
             </div>
@@ -169,21 +189,28 @@
                     <div class="colored-shadow" style="background-image: url(/img/final.jpg); opacity: 1;"></div>
                 </div>
                 <div class="card-body ">
-                    
+
                     <h4 class="card-title">
-                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="F"})">Final
+                        <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="F"})">
+                            Final
                         </a>
+
                     </h4>
+                    <hr />
+                    <h5 class="card-contact">
+                        DR/ @Html.DisplayFor(Model => item.Instructor.InstructorName)
+                    </h5>
                 </div>
                 <div class="card-footer ">
                     <div class="author">
-                        <a href="">
-
-                            <span> </span>
-                        </a>
+                        @Html.DisplayFor(Model => item.Semester)-@Html.DisplayFor(Model => item.Year)
                     </div>
+
                     <div class="stats ml-auto">
-                        <i class="material-icons">schedule</i>
+                        <i class="material-icons">
+                            schedule
+                        </i>
+                        CrediteHour-3
                     </div>
                 </div>
             </div>
@@ -197,20 +224,25 @@
                     <div class="colored-shadow" style="background-image: url(/img/qu.jpg); opacity: 1;"></div>
                 </div>
                 <div class="card-body ">
-                   
+
                     <h4 class="card-title">
                         <a href="@Url.Action("pol","Filtr",new { id=item.CourseCode.Trim(),id2="Q"})">QUIZ</a>
                     </h4>
+                    <hr />
+                    <h5 class="card-contact">
+                        DR/ @Html.DisplayFor(Model => item.Instructor.InstructorName)
+                    </h5>
                 </div>
                 <div class="card-footer ">
                     <div class="author">
-                        <a href="">
-
-                            <span> </span>
-                        </a>
+                        @Html.DisplayFor(Model => item.Semester)-@Html.DisplayFor(Model => item.Year)
                     </div>
+
                     <div class="stats ml-auto">
-                        <i class="material-icons">schedule</i>
+                        <i class="material-icons">
+                            schedule
+                        </i>
+                        CrediteHour-3
                     </div>
                 </div>
             </div>

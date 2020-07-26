@@ -24,7 +24,7 @@ namespace StudentService.Models
         [Required(AllowEmptyStrings = false, ErrorMessage = "InstructorID required")]
 
 
-        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "does not match datatype")]
+    
 
         public int InstructorID { get; set; }
         [Required(AllowEmptyStrings = false, ErrorMessage = "InstructorName required")]
